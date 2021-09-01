@@ -1,6 +1,6 @@
 {
-    "name": "pestphp/pest-plugin-template",
-    "description": "My awesome plugin",
+    "name": "nekofar/pest-plugin-slim",
+    "description": "The Pest Slim Plugin",
     "keywords": [
         "php",
         "framework",
@@ -8,7 +8,8 @@
         "unit",
         "test",
         "testing",
-        "plugin"
+        "plugin",
+        "slim"
     ],
     "license": "MIT",
     "require": {
@@ -18,7 +19,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Pest\\PluginName\\": "src/"
+            "Pest\\Slim\\": "src/"
         },
         "files": [
             "src/Autoload.php"
