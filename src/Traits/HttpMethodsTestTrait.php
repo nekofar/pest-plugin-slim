@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Pest\Slim\Traits;
 
 use Fig\Http\Message\RequestMethodInterface;
