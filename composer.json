@@ -17,11 +17,11 @@
         "pestphp/pest": "^1.0",
         "pestphp/pest-plugin": "^1.0",
         "selective/test-traits": "^1.1",
-        "slim/psr7": "^1.4",
-        "slim/slim": "^4.8"
+        "slim/psr7": "^1.4"
     },
     "require-dev": {
-        "pestphp/pest-dev-tools": "dev-master"
+        "pestphp/pest-dev-tools": "dev-master",
+        "slim/slim": "^4.8"
     },
     "config": {
         "preferred-install": "dist",
