@@ -1,9 +1,30 @@
-This repository contains the Pest Plugin Template.
+# The Pest Slim Plugin
 
-> If you want to start testing your application with Pest, visit the main **[Pest Repository](https://github.com/pestphp/pest)**.
+[![Packagist Version][icon-packagist]][link-packagist]
+[![PHP from Packagist][icon-php-version]][link-packagist]
+[![Coverage Status][icon-coverage]][link-coverage]
+[![License][link-license]][link-license]
+[![Twitter: nekofar][icon-twitter]][link-twitter]
 
-- Explore the docs: **[pestphp.com/docs/plugins/creating-plugins »](https://pestphp.com/docs/plugins/creating-plugins)**
-- Follow us on Twitter: **[@pestphp »](https://twitter.com/pestphp)**
-- Join us on the Discord Server: **[discord.gg/bMAJv82 »](https://discord.gg/bMAJv82)**
+This package is a plugin for [Pest PHP](https://pestphp.com).
+The Slim Plugin for Pest gives your basic functionality for testing your API's built by Slim.
 
-Pest was created by **[Nuno Maduro](https://twitter.com/enunomaduro)** under the **[Sponsorware license](https://github.com/sponsorware/docs)**. It got open-sourced and is now licensed under the **[MIT license](https://opensource.org/licenses/MIT)**.
+## Installation
+
+To get started, install the plugin using composer:
+
+```bash
+composer require nekofar/pest-plugin-slim --dev
+```
+
+---
+[icon-packagist]: https://img.shields.io/packagist/v/nekofar/pest-plugin-slim.svg
+[icon-php-version]: https://img.shields.io/packagist/php-v/nekofar/pest-plugin-slim.svg
+[icon-downloads]: https://img.shields.io/packagist/l/nekofar/pest-plugin-slim.svg
+[icon-twitter]: https://img.shields.io/twitter/follow/nekofar.svg?style=flat
+[icon-coverage]: https://codecov.io/gh/nekofar/pest-plugin-slim/graph/badge.svg
+
+[link-packagist]: https://packagist.org/packages/nekofar/pest-plugin-slim
+[link-license]: https://img.shields.io/github/license/nekofar/pest-plugin-slim.svg
+[link-twitter]: https://twitter.com/nekofar
+[link-coverage]: https://codecov.io/gh/nekofar/pest-plugin-slim
