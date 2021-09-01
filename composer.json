@@ -17,6 +17,7 @@
         "pestphp/pest": "^1.0",
         "pestphp/pest-plugin": "^1.0",
         "selective/test-traits": "^1.1",
+        "slim/psr7": "^1.4",
         "slim/slim": "^4.8"
     },
     "require-dev": {
