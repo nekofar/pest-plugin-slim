@@ -5,15 +5,10 @@ declare(strict_types=1);
 namespace Pest\Slim;
 
 use Pest\Plugin;
-use PHPUnit\Framework\TestCase;
+use Pest\Slim\Traits\AppTestTrait;
 use Psr\Http\Message\ResponseInterface;
 
-Plugin::uses(Example::class);
-
-function example(string $argument): TestCase
-{
-    return test()->example(...func_get_args());
-}
+Plugin::uses(AppTestTrait::class);
 
 /**
  * Visit the given URI with a GET request.
