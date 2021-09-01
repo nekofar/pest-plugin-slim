@@ -1,4 +1,11 @@
 # Changelog
+## [1.0.0-alpha.3](https://github.com/nekofar/pest-plugin-slim/compare/v1.0.0-alpha.2...v1.0.0-alpha.3) (2021-09-01)
+
+
+### Bug Fixes
+
+* solve missing json method issue by increase pest min version ([458e13b](https://github.com/nekofar/pest-plugin-slim/commit/458e13b64c0f7ae610070862f2216220e35650c7))
+
 ## [1.0.0-alpha.2](https://github.com/nekofar/pest-plugin-slim/compare/v1.0.0-alpha.1...v1.0.0-alpha.2) (2021-09-01)
 
 ## [1.0.0-alpha.1](https://github.com/nekofar/pest-plugin-slim/compare/v1.0.0-alpha.0...v1.0.0-alpha.1) (2021-09-01)
