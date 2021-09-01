@@ -5,14 +5,137 @@ declare(strict_types=1);
 namespace Pest\Slim;
 
 use Pest\Plugin;
-use PHPUnit\Framework\TestCase;
+use Pest\Slim\Traits\AppTestTrait;
+use Psr\Http\Message\ResponseInterface;
 
-Plugin::uses(Example::class);
+Plugin::uses(AppTestTrait::class);
 
 /**
- * @return TestCase
+ * Visit the given URI with a GET request.
+ *
+ * @param array<string, string> $headers
  */
-function example(string $argument)
+function get(string $uri, array $headers = []): ResponseInterface
 {
-    return test()->example(...func_get_args());
+    return test()->get(...func_get_args());
+}
+
+/**
+ * Visit the given URI with a GET request, expecting a JSON response.
+ *
+ * @param array<string, string> $headers
+ */
+function getJson(string $uri, array $headers = []): ResponseInterface
+{
+    return test()->getJson(...func_get_args());
+}
+
+/**
+ * Visit the given URI with a POST request.
+ *
+ * @param array<string, mixed>  $data
+ * @param array<string, string> $headers
+ */
+function post(string $uri, array $data = [], array $headers = []): ResponseInterface
+{
+    return test()->post(...func_get_args());
+}
+
+/**
+ * Visit the given URI with a POST request, expecting a JSON response.
+ *
+ * @param array<string, mixed>  $data
+ * @param array<string, string> $headers
+ */
+function postJson(string $uri, array $data = [], array $headers = []): ResponseInterface
+{
+    return test()->postJson(...func_get_args());
+}
+
+/**
+ * Visit the given URI with a PUT request.
+ *
+ * @param array<string, mixed>  $data
+ * @param array<string, string> $headers
+ */
+function put(string $uri, array $data = [], array $headers = []): ResponseInterface
+{
+    return test()->put(...func_get_args());
+}
+
+/**
+ * Visit the given URI with a PUT request, expecting a JSON response.
+ *
+ * @param array<string, mixed>  $data
+ * @param array<string, string> $headers
+ */
+function putJson(string $uri, array $data = [], array $headers = []): ResponseInterface
+{
+    return test()->putJson(...func_get_args());
+}
+
+/**
+ * Visit the given URI with a PATCH request.
+ *
+ * @param array<string, mixed>  $data
+ * @param array<string, string> $headers
+ */
+function patch(string $uri, array $data = [], array $headers = []): ResponseInterface
+{
+    return test()->patch(...func_get_args());
+}
+
+/**
+ * Visit the given URI with a PATCH request, expecting a JSON response.
+ *
+ * @param array<string, mixed>  $data
+ * @param array<string, string> $headers
+ */
+function patchJson(string $uri, array $data = [], array $headers = []): ResponseInterface
+{
+    return test()->patchJson(...func_get_args());
+}
+
+/**
+ * Visit the given URI with a DELETE request.
+ *
+ * @param array<string, mixed>  $data
+ * @param array<string, string> $headers
+ */
+function delete(string $uri, array $data = [], array $headers = []): ResponseInterface
+{
+    return test()->delete(...func_get_args());
+}
+
+/**
+ * Visit the given URI with a DELETE request, expecting a JSON response.
+ *
+ * @param array<string, mixed>  $data
+ * @param array<string, string> $headers
+ */
+function deleteJson(string $uri, array $data = [], array $headers = []): ResponseInterface
+{
+    return test()->deleteJson(...func_get_args());
+}
+
+/**
+ * Visit the given URI with a OPTIONS request.
+ *
+ * @param array<string, mixed>  $data
+ * @param array<string, string> $headers
+ */
+function options(string $uri, array $data = [], array $headers = []): ResponseInterface
+{
+    return test()->options(...func_get_args());
+}
+
+/**
+ * Visit the given URI with a OPTIONS request, expecting a JSON response.
+ *
+ * @param array<string, mixed>  $data
+ * @param array<string, string> $headers
+ */
+function optionsJson(string $uri, array $data = [], array $headers = []): ResponseInterface
+{
+    return test()->optionsJson(...func_get_args());
 }
