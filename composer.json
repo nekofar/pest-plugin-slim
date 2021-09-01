@@ -16,7 +16,8 @@
         "php": "^7.3 || ^8.0",
         "pestphp/pest": "^1.0",
         "pestphp/pest-plugin": "^1.0",
-        "selective/test-traits": "^1.1"
+        "selective/test-traits": "^1.1",
+        "slim/slim": "^4.8"
     },
     "require-dev": {
         "pestphp/pest-dev-tools": "dev-master"
