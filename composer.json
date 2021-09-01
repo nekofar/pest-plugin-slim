@@ -17,6 +17,18 @@
         "pestphp/pest": "^1.0",
         "pestphp/pest-plugin": "^1.0"
     },
+    "require-dev": {
+        "pestphp/pest-dev-tools": "dev-master"
+    },
+    "config": {
+        "preferred-install": "dist",
+        "sort-packages": true
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.x-dev"
+        }
+    },
     "autoload": {
         "psr-4": {
             "Pest\\Slim\\": "src/"
@@ -25,29 +37,17 @@
             "src/Autoload.php"
         ]
     },
-    "require-dev": {
-        "pestphp/pest-dev-tools": "dev-master"
-    },
-    "extra": {
-        "branch-alias": {
-            "dev-master": "1.x-dev"
-        }
-    },
     "minimum-stability": "dev",
     "prefer-stable": true,
-    "config": {
-        "sort-packages": true,
-        "preferred-install": "dist"
-    },
     "scripts": {
         "lint": "php-cs-fixer fix -v",
-        "test:lint": "php-cs-fixer fix -v --dry-run",
-        "test:types": "phpstan analyse --ansi",
-        "test:unit": "pest --colors=always",
         "test": [
             "@test:lint",
             "@test:types",
             "@test:unit"
-        ]
+        ],
+        "test:lint": "php-cs-fixer fix -v --dry-run",
+        "test:types": "phpstan analyse --ansi",
+        "test:unit": "pest --colors=always"
     }
 }
