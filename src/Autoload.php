@@ -12,6 +12,8 @@ Plugin::uses(AppTestTrait::class);
 
 /**
  * Visit the given URI with a GET request.
+ *
+ * @param array<string, string> $headers
  */
 function get(string $uri, array $headers = []): ResponseInterface
 {
@@ -20,6 +22,8 @@ function get(string $uri, array $headers = []): ResponseInterface
 
 /**
  * Visit the given URI with a GET request, expecting a JSON response.
+ *
+ * @param array<string, string> $headers
  */
 function getJson(string $uri, array $headers = []): ResponseInterface
 {
@@ -28,6 +32,9 @@ function getJson(string $uri, array $headers = []): ResponseInterface
 
 /**
  * Visit the given URI with a POST request.
+ *
+ * @param array<string, mixed>  $data
+ * @param array<string, string> $headers
  */
 function post(string $uri, array $data = [], array $headers = []): ResponseInterface
 {
@@ -36,6 +43,9 @@ function post(string $uri, array $data = [], array $headers = []): ResponseInter
 
 /**
  * Visit the given URI with a POST request, expecting a JSON response.
+ *
+ * @param array<string, mixed>  $data
+ * @param array<string, string> $headers
  */
 function postJson(string $uri, array $data = [], array $headers = []): ResponseInterface
 {
@@ -44,6 +54,9 @@ function postJson(string $uri, array $data = [], array $headers = []): ResponseI
 
 /**
  * Visit the given URI with a PUT request.
+ *
+ * @param array<string, mixed>  $data
+ * @param array<string, string> $headers
  */
 function put(string $uri, array $data = [], array $headers = []): ResponseInterface
 {
@@ -52,6 +65,9 @@ function put(string $uri, array $data = [], array $headers = []): ResponseInterf
 
 /**
  * Visit the given URI with a PUT request, expecting a JSON response.
+ *
+ * @param array<string, mixed>  $data
+ * @param array<string, string> $headers
  */
 function putJson(string $uri, array $data = [], array $headers = []): ResponseInterface
 {
@@ -60,6 +76,9 @@ function putJson(string $uri, array $data = [], array $headers = []): ResponseIn
 
 /**
  * Visit the given URI with a PATCH request.
+ *
+ * @param array<string, mixed>  $data
+ * @param array<string, string> $headers
  */
 function patch(string $uri, array $data = [], array $headers = []): ResponseInterface
 {
@@ -68,6 +87,9 @@ function patch(string $uri, array $data = [], array $headers = []): ResponseInte
 
 /**
  * Visit the given URI with a PATCH request, expecting a JSON response.
+ *
+ * @param array<string, mixed>  $data
+ * @param array<string, string> $headers
  */
 function patchJson(string $uri, array $data = [], array $headers = []): ResponseInterface
 {
@@ -76,6 +98,9 @@ function patchJson(string $uri, array $data = [], array $headers = []): Response
 
 /**
  * Visit the given URI with a DELETE request.
+ *
+ * @param array<string, mixed>  $data
+ * @param array<string, string> $headers
  */
 function delete(string $uri, array $data = [], array $headers = []): ResponseInterface
 {
@@ -84,6 +109,9 @@ function delete(string $uri, array $data = [], array $headers = []): ResponseInt
 
 /**
  * Visit the given URI with a DELETE request, expecting a JSON response.
+ *
+ * @param array<string, mixed>  $data
+ * @param array<string, string> $headers
  */
 function deleteJson(string $uri, array $data = [], array $headers = []): ResponseInterface
 {
@@ -92,6 +120,9 @@ function deleteJson(string $uri, array $data = [], array $headers = []): Respons
 
 /**
  * Visit the given URI with a OPTIONS request.
+ *
+ * @param array<string, mixed>  $data
+ * @param array<string, string> $headers
  */
 function options(string $uri, array $data = [], array $headers = []): ResponseInterface
 {
@@ -100,6 +131,9 @@ function options(string $uri, array $data = [], array $headers = []): ResponseIn
 
 /**
  * Visit the given URI with a OPTIONS request, expecting a JSON response.
+ *
+ * @param array<string, mixed>  $data
+ * @param array<string, string> $headers
  */
 function optionsJson(string $uri, array $data = [], array $headers = []): ResponseInterface
 {
