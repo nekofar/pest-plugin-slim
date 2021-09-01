@@ -16,11 +16,11 @@
         "php": "^7.4 || ^8.0",
         "pestphp/pest": "^1.0",
         "pestphp/pest-plugin": "^1.0",
-        "selective/test-traits": "^1.1",
-        "slim/psr7": "^1.4"
+        "selective/test-traits": "^1.1"
     },
     "require-dev": {
         "pestphp/pest-dev-tools": "dev-master",
+        "slim/psr7": "^1.4",
         "slim/slim": "^4.8"
     },
     "config": {
