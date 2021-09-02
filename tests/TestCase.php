@@ -32,22 +32,18 @@ class TestCase extends BaseTestCase
         // Add Error Middleware
         $app->addErrorMiddleware(false, false, false);
 
-        $this->setUpApp($app);
-        $this->setRoutes();
-    }
-
-    protected function setRoutes(): void
-    {
-        $this->app->any('/text', function (Request $request, Response $response, $args) {
+        $app->any('/text', function (Request $request, Response $response, $args): Response {
             $response->getBody()->write('hello, world');
 
             return $response;
         });
 
-        $this->app->any('/json', function (Request $request, Response $response, $args) {
+        $app->any('/json', function (Request $request, Response $response, $args): Response {
             $response->getBody()->write('{"hello":"world"}');
 
             return $response;
         });
+
+        $this->setUpApp($app);
     }
 }
