@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Pest\Slim\Tests;
 
 use Fig\Http\Message\StatusCodeInterface as StatusCode;
@@ -16,7 +18,7 @@ use function Pest\Slim\postJson;
 use function Pest\Slim\put;
 use function Pest\Slim\putJson;
 
-it('can get text', function () {
+it('can get text', function (): void {
     $response = get('/text');
 
     expect($response->getStatusCode())->toEqual(StatusCode::STATUS_OK);
@@ -24,7 +26,7 @@ it('can get text', function () {
     expect($responseBody)->toEqual('hello, world');
 });
 
-it('can post text', function () {
+it('can post text', function (): void {
     $response = post('/text');
 
     expect($response->getStatusCode())->toEqual(StatusCode::STATUS_OK);
@@ -32,7 +34,7 @@ it('can post text', function () {
     expect($responseBody)->toEqual('hello, world');
 });
 
-it('can put text', function () {
+it('can put text', function (): void {
     $response = put('/text');
 
     expect($response->getStatusCode())->toEqual(StatusCode::STATUS_OK);
@@ -40,7 +42,7 @@ it('can put text', function () {
     expect($responseBody)->toEqual('hello, world');
 });
 
-it('can patch text', function () {
+it('can patch text', function (): void {
     $response = patch('/text');
 
     expect($response->getStatusCode())->toEqual(StatusCode::STATUS_OK);
@@ -48,7 +50,7 @@ it('can patch text', function () {
     expect($responseBody)->toEqual('hello, world');
 });
 
-it('can delete text', function () {
+it('can delete text', function (): void {
     $response = delete('/text');
 
     expect($response->getStatusCode())->toEqual(StatusCode::STATUS_OK);
@@ -56,7 +58,7 @@ it('can delete text', function () {
     expect($responseBody)->toEqual('hello, world');
 });
 
-it('can options text', function () {
+it('can options text', function (): void {
     $response = options('/text');
 
     expect($response->getStatusCode())->toEqual(StatusCode::STATUS_OK);
@@ -64,7 +66,7 @@ it('can options text', function () {
     expect($responseBody)->toEqual('hello, world');
 });
 
-it('can get json', function () {
+it('can get json', function (): void {
     $response = getJson('/json');
 
     expect($response->getStatusCode())->toEqual(StatusCode::STATUS_OK);
@@ -73,7 +75,7 @@ it('can get json', function () {
     expect($responseBody)->json()->hello->toBe('world');
 });
 
-it('can post json', function () {
+it('can post json', function (): void {
     $response = postJson('/json');
 
     expect($response->getStatusCode())->toEqual(StatusCode::STATUS_OK);
@@ -82,7 +84,7 @@ it('can post json', function () {
     expect($responseBody)->json()->hello->toBe('world');
 });
 
-it('can put json', function () {
+it('can put json', function (): void {
     $response = putJson('/json');
 
     expect($response->getStatusCode())->toEqual(StatusCode::STATUS_OK);
@@ -91,7 +93,7 @@ it('can put json', function () {
     expect($responseBody)->json()->hello->toBe('world');
 });
 
-it('can patch json', function () {
+it('can patch json', function (): void {
     $response = patchJson('/json');
 
     expect($response->getStatusCode())->toEqual(StatusCode::STATUS_OK);
@@ -100,7 +102,7 @@ it('can patch json', function () {
     expect($responseBody)->json()->hello->toBe('world');
 });
 
-it('can delete json', function () {
+it('can delete json', function (): void {
     $response = deleteJson('/json');
 
     expect($response->getStatusCode())->toEqual(StatusCode::STATUS_OK);
@@ -109,7 +111,7 @@ it('can delete json', function () {
     expect($responseBody)->json()->hello->toBe('world');
 });
 
-it('can options json', function () {
+it('can options json', function (): void {
     $response = optionsJson('/json');
 
     expect($response->getStatusCode())->toEqual(StatusCode::STATUS_OK);
