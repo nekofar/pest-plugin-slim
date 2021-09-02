@@ -9,6 +9,15 @@ use Psr\Http\Message\ResponseInterface;
 
 trait HttpMethodsTestTrait
 {
+    private function send($request, array $headers): ResponseInterface
+    {
+        foreach ($headers as $name => $value) {
+            $request = $request->withHeader($name, $value);
+        }
+
+        return $this->app->handle($request);
+    }
+
     /**
      * Visit the given URI with a GET request.
      */
@@ -16,11 +25,7 @@ trait HttpMethodsTestTrait
     {
         $request = $this->createRequest(RequestMethodInterface::METHOD_GET, $uri);
 
-        foreach ($headers as $name => $value) {
-            $request = $request->withHeader($name, $value);
-        }
-
-        return $this->app->handle($request);
+        return $this->send($request, $headers);
     }
 
     /**
@@ -30,11 +35,7 @@ trait HttpMethodsTestTrait
     {
         $request = $this->createJsonRequest(RequestMethodInterface::METHOD_GET, $uri);
 
-        foreach ($headers as $name => $value) {
-            $request = $request->withHeader($name, $value);
-        }
-
-        return $this->app->handle($request);
+        return $this->send($request, $headers);
     }
 
     /**
@@ -44,11 +45,7 @@ trait HttpMethodsTestTrait
     {
         $request = $this->createFormRequest(RequestMethodInterface::METHOD_POST, $uri, $data);
 
-        foreach ($headers as $name => $value) {
-            $request = $request->withHeader($name, $value);
-        }
-
-        return $this->app->handle($request);
+        return $this->send($request, $headers);
     }
 
     /**
@@ -58,11 +55,7 @@ trait HttpMethodsTestTrait
     {
         $request = $this->createJsonRequest(RequestMethodInterface::METHOD_POST, $uri, $data);
 
-        foreach ($headers as $name => $value) {
-            $request = $request->withHeader($name, $value);
-        }
-
-        return $this->app->handle($request);
+        return $this->send($request, $headers);
     }
 
     /**
@@ -72,11 +65,7 @@ trait HttpMethodsTestTrait
     {
         $request = $this->createFormRequest(RequestMethodInterface::METHOD_PUT, $uri, $data);
 
-        foreach ($headers as $name => $value) {
-            $request = $request->withHeader($name, $value);
-        }
-
-        return $this->app->handle($request);
+        return $this->send($request, $headers);
     }
 
     /**
@@ -86,11 +75,7 @@ trait HttpMethodsTestTrait
     {
         $request = $this->createJsonRequest(RequestMethodInterface::METHOD_PUT, $uri, $data);
 
-        foreach ($headers as $name => $value) {
-            $request = $request->withHeader($name, $value);
-        }
-
-        return $this->app->handle($request);
+        return $this->send($request, $headers);
     }
 
     /**
@@ -100,11 +85,7 @@ trait HttpMethodsTestTrait
     {
         $request = $this->createFormRequest(RequestMethodInterface::METHOD_PATCH, $uri, $data);
 
-        foreach ($headers as $name => $value) {
-            $request = $request->withHeader($name, $value);
-        }
-
-        return $this->app->handle($request);
+        return $this->send($request, $headers);
     }
 
     /**
@@ -114,11 +95,7 @@ trait HttpMethodsTestTrait
     {
         $request = $this->createJsonRequest(RequestMethodInterface::METHOD_PATCH, $uri, $data);
 
-        foreach ($headers as $name => $value) {
-            $request = $request->withHeader($name, $value);
-        }
-
-        return $this->app->handle($request);
+        return $this->send($request, $headers);
     }
 
     /**
@@ -128,11 +105,7 @@ trait HttpMethodsTestTrait
     {
         $request = $this->createFormRequest(RequestMethodInterface::METHOD_DELETE, $uri, $data);
 
-        foreach ($headers as $name => $value) {
-            $request = $request->withHeader($name, $value);
-        }
-
-        return $this->app->handle($request);
+        return $this->send($request, $headers);
     }
 
     /**
@@ -142,11 +115,7 @@ trait HttpMethodsTestTrait
     {
         $request = $this->createJsonRequest(RequestMethodInterface::METHOD_DELETE, $uri, $data);
 
-        foreach ($headers as $name => $value) {
-            $request = $request->withHeader($name, $value);
-        }
-
-        return $this->app->handle($request);
+        return $this->send($request, $headers);
     }
 
     /**
@@ -156,11 +125,7 @@ trait HttpMethodsTestTrait
     {
         $request = $this->createFormRequest(RequestMethodInterface::METHOD_OPTIONS, $uri, $data);
 
-        foreach ($headers as $name => $value) {
-            $request = $request->withHeader($name, $value);
-        }
-
-        return $this->app->handle($request);
+        return $this->send($request, $headers);
     }
 
     /**
@@ -170,10 +135,6 @@ trait HttpMethodsTestTrait
     {
         $request = $this->createJsonRequest(RequestMethodInterface::METHOD_OPTIONS, $uri, $data);
 
-        foreach ($headers as $name => $value) {
-            $request = $request->withHeader($name, $value);
-        }
-
-        return $this->app->handle($request);
+        return $this->send($request, $headers);
     }
 }
