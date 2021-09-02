@@ -14,17 +14,17 @@ jobs:
     name: PHP ${{ matrix.php }} - ${{ matrix.os }} - ${{ matrix.dependency-version }}
 
     steps:
-    - name: Checkout
+    - name: Checkout repository
       uses: actions/checkout@v2
 
-    - name: Setup PHP
+    - name: Setup PHP environment
       uses: shivammathur/setup-php@v2
       with:
         php-version: ${{ matrix.php }}
         tools: composer:v2
         coverage: none
 
-    - name: Setup Problem Matches
+    - name: Setup problem matches
       run: |
         echo "::add-matcher::${{ runner.tool_cache }}/php.json"
         echo "::add-matcher::${{ runner.tool_cache }}/phpunit.json"
@@ -32,5 +32,11 @@ jobs:
     - name: Install PHP dependencies
       run: composer update --${{ matrix.dependency-version }} --no-interaction --no-progress --ansi
 
-    - name: Unit Tests
-      run: ./vendor/bin/pest --colors=always
+    - name: Run unit tests by pest
+      run: ./vendor/bin/pest --colors=always --coverage-clover=coverage.xml
+
+    - name: Collect test coverage
+      uses: codecov/codecov-action@v2
+      with:
+        token: ${{ secrets.CODECOV_TOKEN }}
+        files: ./coverage.xml
