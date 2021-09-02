@@ -25,7 +25,10 @@ trait AppTestTrait
     use MockTestTrait;
     use RouteTestTrait;
 
-    protected App $app;
+    /**
+     * @var App
+     */
+    protected $app;
 
     protected function setUpApp(App $app): void
     {

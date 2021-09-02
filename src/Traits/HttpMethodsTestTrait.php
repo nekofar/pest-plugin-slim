@@ -154,7 +154,7 @@ trait HttpMethodsTestTrait
      */
     public function options(string $uri, array $data = [], array $headers = []): ResponseInterface
     {
-        $request = $this->createFormRequest(RequestMethodInterface::METHOD_PATCH, $uri, $data);
+        $request = $this->createFormRequest(RequestMethodInterface::METHOD_OPTIONS, $uri, $data);
 
         foreach ($headers as $name => $value) {
             $request = $request->withHeader($name, $value);

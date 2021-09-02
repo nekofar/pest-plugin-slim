@@ -1,4 +1,11 @@
 # Changelog
+## [1.0.0-alpha.4](https://github.com/nekofar/pest-plugin-slim/compare/v1.0.0-alpha.3...v1.0.0-alpha.4) (2021-09-02)
+
+
+### Bug Fixes
+
+* change wrong request method on options method ([a3361de](https://github.com/nekofar/pest-plugin-slim/commit/a3361dec567afb727df52cb8d3edaf6980a84ced))
+
 ## [1.0.0-alpha.3](https://github.com/nekofar/pest-plugin-slim/compare/v1.0.0-alpha.2...v1.0.0-alpha.3) (2021-09-01)
 
 

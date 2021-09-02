@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Pest\Slim\Tests;
 
 use DI\Container;
@@ -21,7 +23,9 @@ class TestCase extends BaseTestCase
         $container = new Container();
 
         // Add custom request factory
-        $container->set(ServerRequestFactoryInterface::class, fn () => new ServerRequestFactory());
+        $container->set(ServerRequestFactoryInterface::class, function (): ServerRequestFactory {
+            return new ServerRequestFactory();
+        });
 
         // Configure the application via container
         $app = AppFactory::createFromContainer($container);
@@ -32,22 +36,18 @@ class TestCase extends BaseTestCase
         // Add Error Middleware
         $app->addErrorMiddleware(false, false, false);
 
-        $this->setUpApp($app);
-        $this->setRoutes();
-    }
-
-    protected function setRoutes(): void
-    {
-        $this->app->any('/text', function (Request $request, Response $response, $args) {
+        $app->any('/text', function (Request $request, Response $response): Response {
             $response->getBody()->write('hello, world');
 
             return $response;
         });
 
-        $this->app->any('/json', function (Request $request, Response $response, $args) {
+        $app->any('/json', function (Request $request, Response $response): Response {
             $response->getBody()->write('{"hello":"world"}');
 
             return $response;
         });
+
+        $this->setUpApp($app);
     }
 }
