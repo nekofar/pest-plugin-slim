@@ -22,7 +22,7 @@ jobs:
       with:
         php-version: ${{ matrix.php }}
         tools: composer:v2
-        coverage: none
+        coverage: pcov
 
     - name: Setup problem matches
       run: |
@@ -33,7 +33,7 @@ jobs:
       run: composer update --${{ matrix.dependency-version }} --no-interaction --no-progress --ansi
 
     - name: Run unit tests by pest
-      run: ./vendor/bin/pest --colors=always --coverage-clover=coverage.xml
+      run: ./vendor/bin/pest --colors=always --coverage --coverage-clover coverage.xml
 
     - name: Collect test coverage
       uses: codecov/codecov-action@v2
