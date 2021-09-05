@@ -59,6 +59,18 @@ final class TestResponse
     }
 
     /**
+     * Assert that the response has the given status code and no content.
+     */
+    public function assertNoContent(int $status = StatusCodeInterface::STATUS_NO_CONTENT): self
+    {
+        $this->assertStatus($status);
+
+        Assert::assertEmpty((string) $this->getBody(), 'Response content is not empty.');
+
+        return $this;
+    }
+
+    /**
      * Assert that the response has a not found status code.
      */
     public function assertNotFound(): self
