@@ -20,44 +20,44 @@ use function Pest\Slim\putJson;
 use function Pest\Slim\withHeader;
 use function Pest\Slim\withHeaders;
 
-it('can get text', function (): void {
+it('can send a get request and receive text in response', function (): void {
     get('/text')
         ->assertOk()
         ->assertSee('hello, world')
         ->assertDontSee('see, not');
 });
 
-it('can post text', function (): void {
+it('can send a post request and receive text in response', function (): void {
     post('/text')
         ->assertOk()
         ->assertSee('hello, world');
 });
 
-it('can put text', function (): void {
+it('can send a put request and receive text in response', function (): void {
     put('/text')
         ->assertOk()
         ->assertSee('hello, world');
 });
 
-it('can patch text', function (): void {
+it('can send a patch request and receive text in response', function (): void {
     patch('/text')
         ->assertOk()
         ->assertSee('hello, world');
 });
 
-it('can delete text', function (): void {
+it('can send a delete request and receive text in response', function (): void {
     delete('/text')
         ->assertOk()
         ->assertSee('hello, world');
 });
 
-it('can options text', function (): void {
+it('can send an options request and receive text in response', function (): void {
     options('/text')
         ->assertOk()
         ->assertSee('hello, world');
 });
 
-it('can get json', function (): void {
+it('can send a get request with json data and receive json in response', function (): void {
     $response = getJson('/json')
         ->assertOk()
         ->assertJson();
@@ -65,7 +65,7 @@ it('can get json', function (): void {
     expect((string) $response->getBody())->json()->hello->toBe('world');
 });
 
-it('can post json', function (): void {
+it('can send a post request with json data and receive json in response', function (): void {
     $response = postJson('/json')
         ->assertOk()
         ->assertJson();
@@ -73,7 +73,7 @@ it('can post json', function (): void {
     expect((string) $response->getBody())->json()->hello->toBe('world');
 });
 
-it('can put json', function (): void {
+it('can send a put request with json data and receive json in response', function (): void {
     $response = putJson('/json')
         ->assertOk()
         ->assertJson();
@@ -81,7 +81,7 @@ it('can put json', function (): void {
     expect((string) $response->getBody())->json()->hello->toBe('world');
 });
 
-it('can patch json', function (): void {
+it('can send a patch request with json data and receive json in response', function (): void {
     $response = patchJson('/json')
         ->assertOk()
         ->assertJson();
@@ -89,7 +89,7 @@ it('can patch json', function (): void {
     expect((string) $response->getBody())->json()->hello->toBe('world');
 });
 
-it('can delete json', function (): void {
+it('can send a delete request with json data and receive json in response', function (): void {
     $response = deleteJson('/json')
         ->assertOk()
         ->assertJson();
@@ -97,7 +97,7 @@ it('can delete json', function (): void {
     expect((string) $response->getBody())->json()->hello->toBe('world');
 });
 
-it('can options json', function (): void {
+it('can send an options request with json data and receive json in response', function (): void {
     $response = optionsJson('/json')
         ->assertOk()
         ->assertJson();
@@ -105,25 +105,25 @@ it('can options json', function (): void {
     expect((string) $response->getBody())->json()->hello->toBe('world');
 });
 
-it('can get not found response', function (): void {
+it('can send a request and receive not found status in response', function (): void {
     post('/')->assertNotFound();
 });
 
-it('can get created response', function (): void {
+it('can send a request and receive created status in response', function (): void {
     post('/created')
         ->assertCreated()
         ->assertNoContent(StatusCodeInterface::STATUS_CREATED);
 });
 
-it('can get forbidden response', function (): void {
+it('can send a request and receive forbidden status in response', function (): void {
     post('/forbidden')->assertForbidden();
 });
 
-it('can get unauthorized response', function (): void {
+it('can send a request and receive unauthorized status in response', function (): void {
     post('/unauthorized')->assertUnauthorized();
 });
 
-it('can get unprocessable response', function (): void {
+it('can send a request and receive unprocessable status in response', function (): void {
     post('/unprocessable')->assertUnprocessable();
 });
 
