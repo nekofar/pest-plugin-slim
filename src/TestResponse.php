@@ -101,6 +101,41 @@ final class TestResponse
     }
 
     /**
+     * Asserts that the response contains the given header and equals the optional value.
+     *
+     * @param mixed $value
+     */
+    public function assertHeader(string $headerName, $value): self
+    {
+        Assert::assertTrue(
+            $this->hasHeader($headerName), "Header [{$headerName}] not present on response."
+        );
+
+        $actual = $this->getHeaderLine($headerName);
+
+        if (!is_null($value)) {
+            Assert::assertEquals(
+                $value, $this->getHeaderLine($headerName),
+                "Header [{$headerName}] was found, but value [{$actual}] does not match [{$value}]."
+            );
+        }
+
+        return $this;
+    }
+
+    /**
+     * Asserts that the response does not contain the given header.
+     */
+    public function assertHeaderMissing(string $headerName): self
+    {
+        Assert::assertFalse(
+            $this->hasHeader($headerName), "Unexpected header [{$headerName}] is present on response."
+        );
+
+        return $this;
+    }
+
+    /**
      * Assert that the given string is contained within the response.
      */
     public function assertSee(string $value): self
