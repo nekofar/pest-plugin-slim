@@ -18,6 +18,7 @@ use function Pest\Slim\postJson;
 use function Pest\Slim\put;
 use function Pest\Slim\putJson;
 use function Pest\Slim\withHeader;
+use function Pest\Slim\withHeaders;
 
 it('can get text', function (): void {
     get('/text')
@@ -128,6 +129,13 @@ it('can get unprocessable response', function (): void {
 
 it('can request with header and get response headers', function (): void {
     withHeader('X-Test', 'Test')
+        ->get('/header')
+        ->assertOk()
+        ->assertHeader('X-Test', 'Test');
+});
+
+it('can send a request with multiple headers at once', function (): void {
+    withHeaders(['X-Test' => 'Test'])
         ->get('/header')
         ->assertOk()
         ->assertHeader('X-Test', 'Test');
