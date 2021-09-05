@@ -6,8 +6,7 @@ namespace Pest\Slim\Tests;
 
 use DI\Container;
 use Fig\Http\Message\StatusCodeInterface as StatusCode;
-use Pest\Slim\Traits\AppTestTrait;
-use PHPUnit\Framework\TestCase as BaseTestCase;
+use Pest\Slim\TestCase as BaseTestCase;
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestFactoryInterface;
 use Psr\Http\Message\ServerRequestInterface as Request;
@@ -16,8 +15,6 @@ use Slim\Psr7\Factory\ServerRequestFactory;
 
 abstract class TestCase extends BaseTestCase
 {
-    use AppTestTrait;
-
     /**
      * Set up the test environment.
      */
