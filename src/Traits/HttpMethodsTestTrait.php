@@ -11,6 +11,10 @@ trait HttpMethodsTestTrait
 {
     private function send($request, array $headers): TestResponse
     {
+        if (isset($this->defaultHeaders)) {
+            $headers = array_merge($this->defaultHeaders, $headers);
+        }
+
         foreach ($headers as $name => $value) {
             $request = $request->withHeader($name, $value);
         }

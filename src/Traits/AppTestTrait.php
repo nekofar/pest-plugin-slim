@@ -21,6 +21,7 @@ trait AppTestTrait
     use ContainerTestTrait;
     use HttpTestTrait;
     use HttpJsonTestTrait;
+    use HttpHeadersTestTrait;
     use HttpMethodsTestTrait;
     use MockTestTrait;
     use RouteTestTrait;
