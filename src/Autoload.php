@@ -6,7 +6,6 @@ namespace Pest\Slim;
 
 use Pest\Plugin;
 use Pest\Slim\Traits\AppTestTrait;
-use Psr\Http\Message\ResponseInterface;
 
 Plugin::uses(AppTestTrait::class);
 
@@ -15,7 +14,7 @@ Plugin::uses(AppTestTrait::class);
  *
  * @param array<string, string> $headers
  */
-function get(string $uri, array $headers = []): ResponseInterface
+function get(string $uri, array $headers = []): TestResponse
 {
     return test()->get(...func_get_args());
 }
@@ -25,7 +24,7 @@ function get(string $uri, array $headers = []): ResponseInterface
  *
  * @param array<string, string> $headers
  */
-function getJson(string $uri, array $headers = []): ResponseInterface
+function getJson(string $uri, array $headers = []): TestResponse
 {
     return test()->getJson(...func_get_args());
 }
@@ -36,7 +35,7 @@ function getJson(string $uri, array $headers = []): ResponseInterface
  * @param array<string, mixed>  $data
  * @param array<string, string> $headers
  */
-function post(string $uri, array $data = [], array $headers = []): ResponseInterface
+function post(string $uri, array $data = [], array $headers = []): TestResponse
 {
     return test()->post(...func_get_args());
 }
@@ -47,7 +46,7 @@ function post(string $uri, array $data = [], array $headers = []): ResponseInter
  * @param array<string, mixed>  $data
  * @param array<string, string> $headers
  */
-function postJson(string $uri, array $data = [], array $headers = []): ResponseInterface
+function postJson(string $uri, array $data = [], array $headers = []): TestResponse
 {
     return test()->postJson(...func_get_args());
 }
@@ -58,7 +57,7 @@ function postJson(string $uri, array $data = [], array $headers = []): ResponseI
  * @param array<string, mixed>  $data
  * @param array<string, string> $headers
  */
-function put(string $uri, array $data = [], array $headers = []): ResponseInterface
+function put(string $uri, array $data = [], array $headers = []): TestResponse
 {
     return test()->put(...func_get_args());
 }
@@ -69,7 +68,7 @@ function put(string $uri, array $data = [], array $headers = []): ResponseInterf
  * @param array<string, mixed>  $data
  * @param array<string, string> $headers
  */
-function putJson(string $uri, array $data = [], array $headers = []): ResponseInterface
+function putJson(string $uri, array $data = [], array $headers = []): TestResponse
 {
     return test()->putJson(...func_get_args());
 }
@@ -80,7 +79,7 @@ function putJson(string $uri, array $data = [], array $headers = []): ResponseIn
  * @param array<string, mixed>  $data
  * @param array<string, string> $headers
  */
-function patch(string $uri, array $data = [], array $headers = []): ResponseInterface
+function patch(string $uri, array $data = [], array $headers = []): TestResponse
 {
     return test()->patch(...func_get_args());
 }
@@ -91,7 +90,7 @@ function patch(string $uri, array $data = [], array $headers = []): ResponseInte
  * @param array<string, mixed>  $data
  * @param array<string, string> $headers
  */
-function patchJson(string $uri, array $data = [], array $headers = []): ResponseInterface
+function patchJson(string $uri, array $data = [], array $headers = []): TestResponse
 {
     return test()->patchJson(...func_get_args());
 }
@@ -102,7 +101,7 @@ function patchJson(string $uri, array $data = [], array $headers = []): Response
  * @param array<string, mixed>  $data
  * @param array<string, string> $headers
  */
-function delete(string $uri, array $data = [], array $headers = []): ResponseInterface
+function delete(string $uri, array $data = [], array $headers = []): TestResponse
 {
     return test()->delete(...func_get_args());
 }
@@ -113,7 +112,7 @@ function delete(string $uri, array $data = [], array $headers = []): ResponseInt
  * @param array<string, mixed>  $data
  * @param array<string, string> $headers
  */
-function deleteJson(string $uri, array $data = [], array $headers = []): ResponseInterface
+function deleteJson(string $uri, array $data = [], array $headers = []): TestResponse
 {
     return test()->deleteJson(...func_get_args());
 }
@@ -124,7 +123,7 @@ function deleteJson(string $uri, array $data = [], array $headers = []): Respons
  * @param array<string, mixed>  $data
  * @param array<string, string> $headers
  */
-function options(string $uri, array $data = [], array $headers = []): ResponseInterface
+function options(string $uri, array $data = [], array $headers = []): TestResponse
 {
     return test()->options(...func_get_args());
 }
@@ -135,7 +134,7 @@ function options(string $uri, array $data = [], array $headers = []): ResponseIn
  * @param array<string, mixed>  $data
  * @param array<string, string> $headers
  */
-function optionsJson(string $uri, array $data = [], array $headers = []): ResponseInterface
+function optionsJson(string $uri, array $data = [], array $headers = []): TestResponse
 {
     return test()->optionsJson(...func_get_args());
 }

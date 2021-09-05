@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Pest\Slim\Tests;
 
-use Fig\Http\Message\StatusCodeInterface as StatusCode;
 use function Pest\Slim\delete;
 use function Pest\Slim\deleteJson;
 use function Pest\Slim\get;
@@ -19,103 +18,85 @@ use function Pest\Slim\put;
 use function Pest\Slim\putJson;
 
 it('can get text', function (): void {
-    $response = get('/text');
-
-    expect($response->getStatusCode())->toEqual(StatusCode::STATUS_OK);
-    $responseBody = (string) $response->getBody();
-    expect($responseBody)->toEqual('hello, world');
+    get('/text')
+        ->assertOk()
+        ->assertSee('hello, world');
 });
 
 it('can post text', function (): void {
-    $response = post('/text');
-
-    expect($response->getStatusCode())->toEqual(StatusCode::STATUS_OK);
-    $responseBody = (string) $response->getBody();
-    expect($responseBody)->toEqual('hello, world');
+    post('/text')
+        ->assertOk()
+        ->assertSee('hello, world');
 });
 
 it('can put text', function (): void {
-    $response = put('/text');
-
-    expect($response->getStatusCode())->toEqual(StatusCode::STATUS_OK);
-    $responseBody = (string) $response->getBody();
-    expect($responseBody)->toEqual('hello, world');
+    put('/text')
+        ->assertOk()
+        ->assertSee('hello, world');
 });
 
 it('can patch text', function (): void {
-    $response = patch('/text');
-
-    expect($response->getStatusCode())->toEqual(StatusCode::STATUS_OK);
-    $responseBody = (string) $response->getBody();
-    expect($responseBody)->toEqual('hello, world');
+    patch('/text')
+        ->assertOk()
+        ->assertSee('hello, world');
 });
 
 it('can delete text', function (): void {
-    $response = delete('/text');
-
-    expect($response->getStatusCode())->toEqual(StatusCode::STATUS_OK);
-    $responseBody = (string) $response->getBody();
-    expect($responseBody)->toEqual('hello, world');
+    delete('/text')
+        ->assertOk()
+        ->assertSee('hello, world');
 });
 
 it('can options text', function (): void {
-    $response = options('/text');
-
-    expect($response->getStatusCode())->toEqual(StatusCode::STATUS_OK);
-    $responseBody = (string) $response->getBody();
-    expect($responseBody)->toEqual('hello, world');
+    options('/text')
+        ->assertOk()
+        ->assertSee('hello, world');
 });
 
 it('can get json', function (): void {
-    $response = getJson('/json');
-
-    expect($response->getStatusCode())->toEqual(StatusCode::STATUS_OK);
-    $responseBody = (string) $response->getBody();
-    expect($responseBody)->toBeJson();
-    expect($responseBody)->json()->hello->toBe('world');
+    $response = getJson('/json')
+        ->assertOk()
+        ->assertJson();
+    /* @phpstan-ignore-next-line */
+    expect((string) $response->getBody())->json()->hello->toBe('world');
 });
 
 it('can post json', function (): void {
-    $response = postJson('/json');
-
-    expect($response->getStatusCode())->toEqual(StatusCode::STATUS_OK);
-    $responseBody = (string) $response->getBody();
-    expect($responseBody)->toBeJson();
-    expect($responseBody)->json()->hello->toBe('world');
+    $response = postJson('/json')
+        ->assertOk()
+        ->assertJson();
+    /* @phpstan-ignore-next-line */
+    expect((string) $response->getBody())->json()->hello->toBe('world');
 });
 
 it('can put json', function (): void {
-    $response = putJson('/json');
-
-    expect($response->getStatusCode())->toEqual(StatusCode::STATUS_OK);
-    $responseBody = (string) $response->getBody();
-    expect($responseBody)->toBeJson();
-    expect($responseBody)->json()->hello->toBe('world');
+    $response = putJson('/json')
+        ->assertOk()
+        ->assertJson();
+    /* @phpstan-ignore-next-line */
+    expect((string) $response->getBody())->json()->hello->toBe('world');
 });
 
 it('can patch json', function (): void {
-    $response = patchJson('/json');
-
-    expect($response->getStatusCode())->toEqual(StatusCode::STATUS_OK);
-    $responseBody = (string) $response->getBody();
-    expect($responseBody)->toBeJson();
-    expect($responseBody)->json()->hello->toBe('world');
+    $response = patchJson('/json')
+        ->assertOk()
+        ->assertJson();
+    /* @phpstan-ignore-next-line */
+    expect((string) $response->getBody())->json()->hello->toBe('world');
 });
 
 it('can delete json', function (): void {
-    $response = deleteJson('/json');
-
-    expect($response->getStatusCode())->toEqual(StatusCode::STATUS_OK);
-    $responseBody = (string) $response->getBody();
-    expect($responseBody)->toBeJson();
-    expect($responseBody)->json()->hello->toBe('world');
+    $response = deleteJson('/json')
+        ->assertOk()
+        ->assertJson();
+    /* @phpstan-ignore-next-line */
+    expect((string) $response->getBody())->json()->hello->toBe('world');
 });
 
 it('can options json', function (): void {
-    $response = optionsJson('/json');
-
-    expect($response->getStatusCode())->toEqual(StatusCode::STATUS_OK);
-    $responseBody = (string) $response->getBody();
-    expect($responseBody)->toBeJson();
-    expect($responseBody)->json()->hello->toBe('world');
+    $response = optionsJson('/json')
+        ->assertOk()
+        ->assertJson();
+    /* @phpstan-ignore-next-line */
+    expect((string) $response->getBody())->json()->hello->toBe('world');
 });
