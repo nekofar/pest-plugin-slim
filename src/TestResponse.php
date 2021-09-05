@@ -114,10 +114,8 @@ final class TestResponse
 
     /**
      * Asserts that the response contains the given header and equals the optional value.
-     *
-     * @param mixed $value
      */
-    public function assertHeader(string $headerName, $value): self
+    public function assertHeader(string $headerName, ?string $value = null): self
     {
         Assert::assertTrue(
             $this->hasHeader($headerName), "Header [{$headerName}] not present on response."
