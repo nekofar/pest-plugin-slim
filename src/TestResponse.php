@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Pest\Slim;
 
+use Fig\Http\Message\StatusCodeInterface;
+use PHPUnit\Framework\Assert;
 use Slim\Psr7\Response;
 
 /**
@@ -36,6 +38,96 @@ final class TestResponse
     public static function fromBaseResponse(Response $response): TestResponse
     {
         return new static($response);
+    }
+
+    /**
+     * Assert that the response has a 200 status code.
+     */
+    public function assertOk(): self
+    {
+        $this->assertStatus(StatusCodeInterface::STATUS_OK);
+
+        return $this;
+    }
+
+    /**
+     * Assert that the response has a 201 status code.
+     */
+    public function assertCreated(): self
+    {
+        return $this->assertStatus(StatusCodeInterface::STATUS_CREATED);
+    }
+
+    /**
+     * Assert that the response has a not found status code.
+     */
+    public function assertNotFound(): self
+    {
+        return $this->assertStatus(StatusCodeInterface::STATUS_NOT_FOUND);
+    }
+
+    /**
+     * Assert that the response has a forbidden status code.
+     */
+    public function assertForbidden(): self
+    {
+        return $this->assertStatus(StatusCodeInterface::STATUS_FORBIDDEN);
+    }
+
+    /**
+     * Assert that the response has an unauthorized status code.
+     */
+    public function assertUnauthorized(): self
+    {
+        return $this->assertStatus(StatusCodeInterface::STATUS_UNAUTHORIZED);
+    }
+
+    /**
+     * Assert that the response has a 422 status code.
+     */
+    public function assertUnprocessable(): self
+    {
+        return $this->assertStatus(StatusCodeInterface::STATUS_UNPROCESSABLE_ENTITY);
+    }
+
+    /**
+     * Assert that the response has the given status code.
+     */
+    public function assertStatus(int $status): self
+    {
+        Assert::assertEquals($status, $this->getStatusCode());
+
+        return $this;
+    }
+
+    /**
+     * Assert that the given string is contained within the response.
+     */
+    public function assertSee(string $value): self
+    {
+        Assert::assertStringContainsString($value, (string) $this->getBody());
+
+        return $this;
+    }
+
+    /**
+     * Assert that the given string is not contained within the response.
+     */
+    public function assertDontSee(string $value): self
+    {
+        Assert::assertStringNotContainsString($value, (string) $this->getBody());
+
+        return $this;
+    }
+
+    /**
+     * Assert that the response is a superset of the given JSON.
+     */
+    public function assertJson(): self
+    {
+        Assert::assertJson((string) $this->getBody());
+
+        return $this;
     }
 
     /**
