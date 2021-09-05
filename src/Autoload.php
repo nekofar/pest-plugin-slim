@@ -4,11 +4,6 @@ declare(strict_types=1);
 
 namespace Pest\Slim;
 
-use Pest\Plugin;
-use Pest\Slim\Traits\AppTestTrait;
-
-Plugin::uses(AppTestTrait::class);
-
 /**
  * Visit the given URI with a GET request.
  *
