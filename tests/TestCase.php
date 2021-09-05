@@ -51,6 +51,12 @@ abstract class TestCase extends BaseTestCase
             return $response;
         });
 
+        $app->get('/header', function (Request $request, Response $response): Response {
+            return $response
+                ->withHeader('X-Test', $request->getHeader('X-Test'))
+                ->withStatus(StatusCode::STATUS_OK);
+        });
+
         $app->post('/created', function (Request $request, Response $response): Response {
             return $response->withStatus(StatusCode::STATUS_CREATED);
         });
