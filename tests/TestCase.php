@@ -13,12 +13,17 @@ use Psr\Http\Message\ServerRequestInterface as Request;
 use Slim\Factory\AppFactory;
 use Slim\Psr7\Factory\ServerRequestFactory;
 
-class TestCase extends BaseTestCase
+abstract class TestCase extends BaseTestCase
 {
     use AppTestTrait;
 
+    /**
+     * Set up the test environment.
+     */
     protected function setUp(): void
     {
+        parent::setUp();
+
         // Create Container using PHP-DI
         $container = new Container();
 
