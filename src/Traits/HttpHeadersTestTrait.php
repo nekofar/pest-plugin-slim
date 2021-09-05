@@ -9,14 +9,16 @@ trait HttpHeadersTestTrait
     /**
      * Additional headers for the request.
      *
-     * @var array
+     * @var array<string, string>
      */
     protected $defaultHeaders = [];
 
     /**
      * Define additional headers to be sent with the request.
+     *
+     * @param array<string, string> $headers
      */
-    public function withHeaders(array $headers): self
+    final public function withHeaders(array $headers): self
     {
         $this->defaultHeaders = array_merge($this->defaultHeaders, $headers);
 
@@ -26,7 +28,7 @@ trait HttpHeadersTestTrait
     /**
      * Add a header to be sent with the request.
      */
-    public function withHeader(string $name, string $value): self
+    final public function withHeader(string $name, string $value): self
     {
         $this->defaultHeaders[$name] = $value;
 
@@ -36,7 +38,7 @@ trait HttpHeadersTestTrait
     /**
      * Add an authorization token for the request.
      */
-    public function withToken(string $token, string $type = 'Bearer'): self
+    final public function withToken(string $token, string $type = 'Bearer'): self
     {
         return $this->withHeader('Authorization', $type . ' ' . $token);
     }
@@ -44,7 +46,7 @@ trait HttpHeadersTestTrait
     /**
      * Flush all the configured headers.
      */
-    public function flushHeaders(): self
+    final public function flushHeaders(): self
     {
         $this->defaultHeaders = [];
 

@@ -115,7 +115,7 @@ final class TestResponse
     /**
      * Asserts that the response contains the given header and equals the optional value.
      */
-    public function assertHeader(string $headerName, ?string $value = null): self
+    public function assertHeader(string $headerName, string $value = ''): self
     {
         Assert::assertTrue(
             $this->hasHeader($headerName), "Header [{$headerName}] not present on response."
@@ -123,7 +123,7 @@ final class TestResponse
 
         $actual = $this->getHeaderLine($headerName);
 
-        if (!is_null($value)) {
+        if ($value !== '') {
             Assert::assertEquals(
                 $value, $this->getHeaderLine($headerName),
                 "Header [{$headerName}] was found, but value [{$actual}] does not match [{$value}]."

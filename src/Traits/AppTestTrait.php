@@ -31,7 +31,7 @@ trait AppTestTrait
      */
     protected $app;
 
-    protected function setUpApp(App $app): void
+    final protected function setUpApp(App $app): void
     {
         $this->app = $app;
         $this->setUpContainer($this->app->getContainer());
