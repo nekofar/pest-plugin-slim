@@ -144,7 +144,7 @@ final class TestResponse
     /**
      * Proxy isset() checks to the underlying base response.
      *
-     * @return mixed
+     * @return bool
      */
     public function __isset(string $key)
     {

@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Pest\Slim\Tests;
 
 use DI\Container;
+use Fig\Http\Message\StatusCodeInterface as StatusCode;
 use Pest\Slim\Traits\AppTestTrait;
 use PHPUnit\Framework\TestCase as BaseTestCase;
 use Psr\Http\Message\ResponseInterface as Response;
@@ -51,6 +52,22 @@ abstract class TestCase extends BaseTestCase
             $response->getBody()->write('{"hello":"world"}');
 
             return $response;
+        });
+
+        $app->post('/created', function (Request $request, Response $response): Response {
+            return $response->withStatus(StatusCode::STATUS_CREATED);
+        });
+
+        $app->post('/forbidden', function (Request $request, Response $response): Response {
+            return $response->withStatus(StatusCode::STATUS_FORBIDDEN);
+        });
+
+        $app->post('/unauthorized', function (Request $request, Response $response): Response {
+            return $response->withStatus(StatusCode::STATUS_UNAUTHORIZED);
+        });
+
+        $app->post('/unprocessable', function (Request $request, Response $response): Response {
+            return $response->withStatus(StatusCode::STATUS_UNPROCESSABLE_ENTITY);
         });
 
         $this->setUpApp($app);

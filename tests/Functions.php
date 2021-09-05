@@ -20,7 +20,8 @@ use function Pest\Slim\putJson;
 it('can get text', function (): void {
     get('/text')
         ->assertOk()
-        ->assertSee('hello, world');
+        ->assertSee('hello, world')
+        ->assertDontSee('see, not');
 });
 
 it('can post text', function (): void {
@@ -99,4 +100,24 @@ it('can options json', function (): void {
         ->assertJson();
     /* @phpstan-ignore-next-line */
     expect((string) $response->getBody())->json()->hello->toBe('world');
+});
+
+it('can get not found response', function (): void {
+    post('/')->assertNotFound();
+});
+
+it('can get created response', function (): void {
+    post('/created')->assertCreated();
+});
+
+it('can get forbidden response', function (): void {
+    post('/forbidden')->assertForbidden();
+});
+
+it('can get unauthorized response', function (): void {
+    post('/unauthorized')->assertUnauthorized();
+});
+
+it('can get unprocessable response', function (): void {
+    post('/unprocessable')->assertUnprocessable();
 });
