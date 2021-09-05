@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Pest\Slim\Tests;
 
+use Fig\Http\Message\StatusCodeInterface;
 use function Pest\Slim\delete;
 use function Pest\Slim\deleteJson;
 use function Pest\Slim\get;
@@ -107,7 +108,9 @@ it('can get not found response', function (): void {
 });
 
 it('can get created response', function (): void {
-    post('/created')->assertCreated();
+    post('/created')
+        ->assertCreated()
+        ->assertNoContent(StatusCodeInterface::STATUS_CREATED);
 });
 
 it('can get forbidden response', function (): void {
