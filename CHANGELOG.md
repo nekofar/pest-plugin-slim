@@ -1,4 +1,6 @@
 # Changelog
+## [1.0.0](https://github.com/nekofar/pest-plugin-slim/compare/v1.0.0-alpha.5...v1.0.0) (2021-09-06)
+
 ## [1.0.0-alpha.6](https://github.com/nekofar/pest-plugin-slim/compare/v1.0.0-alpha.5...v1.0.0-alpha.6) (2021-09-05)
 
 ## [1.0.0-alpha.5](https://github.com/nekofar/pest-plugin-slim/compare/v1.0.0-alpha.4...v1.0.0-alpha.5) (2021-09-02)

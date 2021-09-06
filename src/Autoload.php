@@ -4,10 +4,31 @@ declare(strict_types=1);
 
 namespace Pest\Slim;
 
-use Pest\Plugin;
-use Pest\Slim\Traits\AppTestTrait;
+/**
+ * Define additional headers to be sent with the request.
+ *
+ * @param array<string, string> $headers
+ */
+function withHeaders(array $headers): TestCase
+{
+    return test()->withHeaders(...func_get_args());
+}
 
-Plugin::uses(AppTestTrait::class);
+/**
+ * Add a header to be sent with the request.
+ */
+function withHeader(string $name, string $value): TestCase
+{
+    return test()->withHeader(...func_get_args());
+}
+
+/**
+ * Flush all the configured headers.
+ */
+function flushHeaders(): TestCase
+{
+    return test()->flushHeaders(...func_get_args());
+}
 
 /**
  * Visit the given URI with a GET request.

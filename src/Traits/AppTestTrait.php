@@ -21,6 +21,7 @@ trait AppTestTrait
     use ContainerTestTrait;
     use HttpTestTrait;
     use HttpJsonTestTrait;
+    use HttpHeadersTestTrait;
     use HttpMethodsTestTrait;
     use MockTestTrait;
     use RouteTestTrait;
@@ -30,7 +31,7 @@ trait AppTestTrait
      */
     protected $app;
 
-    protected function setUpApp(App $app): void
+    final protected function setUpApp(App $app): void
     {
         $this->app = $app;
         $this->setUpContainer($this->app->getContainer());
