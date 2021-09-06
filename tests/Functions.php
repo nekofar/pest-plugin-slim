@@ -19,6 +19,7 @@ use function Pest\Slim\put;
 use function Pest\Slim\putJson;
 use function Pest\Slim\withHeader;
 use function Pest\Slim\withHeaders;
+use function Pest\Slim\withToken;
 
 it('can send a get request and receive text in response', function (): void {
     get('/text')
@@ -139,4 +140,12 @@ it('can send a request with multiple headers at once', function (): void {
         ->get('/header')
         ->assertOk()
         ->assertHeader('X-Test', 'Test');
+});
+
+it('can send a request with authorization token in the headers', function (): void {
+    withToken(base64_encode('test:123456'), 'Basic')
+        ->get('/token')
+        ->assertOk()
+        ->assertHeaderMissing('X-Test')
+        ->assertHeader('Authorization', 'Basic ' . base64_encode('test:123456'));
 });

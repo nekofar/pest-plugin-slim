@@ -51,6 +51,12 @@ abstract class TestCase extends BaseTestCase
             return $response;
         });
 
+        $app->get('/token', function (Request $request, Response $response): Response {
+            return $response
+                ->withHeader('Authorization', $request->getHeader('Authorization'))
+                ->withStatus(StatusCode::STATUS_OK);
+        });
+
         $app->get('/header', function (Request $request, Response $response): Response {
             return $response
                 ->withHeader('X-Test', $request->getHeader('X-Test'))

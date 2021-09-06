@@ -23,6 +23,14 @@ function withHeader(string $name, string $value): TestCase
 }
 
 /**
+ * Add an authorization token for the request.
+ */
+function withToken(string $token, string $type = 'Bearer'): TestCase
+{
+    return test()->withToken(...func_get_args());
+}
+
+/**
  * Flush all the configured headers.
  */
 function flushHeaders(): TestCase
