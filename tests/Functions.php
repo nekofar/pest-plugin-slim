@@ -2,24 +2,24 @@
 
 declare(strict_types=1);
 
-namespace Pest\Slim\Tests;
+namespace Tests;
 
 use Fig\Http\Message\StatusCodeInterface;
-use function Pest\Slim\delete;
-use function Pest\Slim\deleteJson;
-use function Pest\Slim\get;
-use function Pest\Slim\getJson;
-use function Pest\Slim\options;
-use function Pest\Slim\optionsJson;
-use function Pest\Slim\patch;
-use function Pest\Slim\patchJson;
-use function Pest\Slim\post;
-use function Pest\Slim\postJson;
-use function Pest\Slim\put;
-use function Pest\Slim\putJson;
-use function Pest\Slim\withHeader;
-use function Pest\Slim\withHeaders;
-use function Pest\Slim\withToken;
+use function Nekofar\Slim\Pest\delete;
+use function Nekofar\Slim\Pest\deleteJson;
+use function Nekofar\Slim\Pest\get;
+use function Nekofar\Slim\Pest\getJson;
+use function Nekofar\Slim\Pest\options;
+use function Nekofar\Slim\Pest\optionsJson;
+use function Nekofar\Slim\Pest\patch;
+use function Nekofar\Slim\Pest\patchJson;
+use function Nekofar\Slim\Pest\post;
+use function Nekofar\Slim\Pest\postJson;
+use function Nekofar\Slim\Pest\put;
+use function Nekofar\Slim\Pest\putJson;
+use function Nekofar\Slim\Pest\withHeader;
+use function Nekofar\Slim\Pest\withHeaders;
+use function Nekofar\Slim\Pest\withToken;
 
 it('can send a get request and receive text in response', function (): void {
     get('/text')
