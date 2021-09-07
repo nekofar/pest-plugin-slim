@@ -21,8 +21,7 @@
     "require-dev": {
         "roave/security-advisories": "dev-latest",
         "pestphp/pest-dev-tools": "dev-master",
-        "php-di/slim-bridge": "^3.1",
-        "slim/psr7": "^1.4"
+        "php-di/slim-bridge": "^3.1"
     },
     "config": {
         "preferred-install": "dist",
