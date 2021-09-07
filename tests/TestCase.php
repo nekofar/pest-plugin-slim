@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Pest\Slim\Tests;
+namespace Tests;
 
 use DI\Container;
 use Fig\Http\Message\StatusCodeInterface as StatusCode;
-use Pest\Slim\TestCase as BaseTestCase;
+use PHPUnit\Framework\TestCase as BaseTestCase;
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestFactoryInterface;
 use Psr\Http\Message\ServerRequestInterface as Request;
