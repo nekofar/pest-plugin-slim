@@ -20,8 +20,7 @@
     },
     "require-dev": {
         "roave/security-advisories": "dev-latest",
-        "pestphp/pest-dev-tools": "dev-master",
-        "php-di/slim-bridge": "^3.1"
+        "pestphp/pest-dev-tools": "dev-master"
     },
     "config": {
         "preferred-install": "dist",
