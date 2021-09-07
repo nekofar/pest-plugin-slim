@@ -32,7 +32,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Pest\\Slim\\": "src/"
+            "Nekofar\\Slim\\Pest\\": "src/"
         },
         "files": [
             "src/Autoload.php"
@@ -40,7 +40,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Pest\\Slim\\Tests\\": "tests/"
+            "Tests\\": "tests/"
         }
     },
     "minimum-stability": "dev",
