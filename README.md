@@ -18,6 +18,34 @@ To get started, install the plugin using composer:
 composer require nekofar/pest-plugin-slim --dev
 ```
 
+
+Requires Slim Framework 4 and PHP 7.3 or newer.
+
+## Usage
+
+```php
+beforeEach(function (): void {
+    $app = require __DIR__ . '/../config/bootstrap.php';
+        
+    $this->setUpApp($app);
+})
+            
+it('can see home page', function (): void {
+    get('/')
+        ->assertOk()
+        ->assertSee('Welcome');
+});
+
+```
+
+## Contributing
+
+Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
+
+## License
+
+The MIT License (MIT). Please see [License File](LICENSE) for more information.
+
 ---
 [icon-packagist]: https://img.shields.io/packagist/v/nekofar/pest-plugin-slim.svg
 [icon-php-version]: https://img.shields.io/packagist/php-v/nekofar/pest-plugin-slim.svg
