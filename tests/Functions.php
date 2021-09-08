@@ -62,7 +62,7 @@ it('can send a get request with json data and receive json in response', functio
     $response = getJson('/json')
         ->assertOk()
         ->assertJson();
-    /* @phpstan-ignore-next-line */
+
     expect((string) $response->getBody())->json()->hello->toBe('world');
 });
 
@@ -70,7 +70,7 @@ it('can send a post request with json data and receive json in response', functi
     $response = postJson('/json')
         ->assertOk()
         ->assertJson();
-    /* @phpstan-ignore-next-line */
+
     expect((string) $response->getBody())->json()->hello->toBe('world');
 });
 
@@ -78,7 +78,7 @@ it('can send a put request with json data and receive json in response', functio
     $response = putJson('/json')
         ->assertOk()
         ->assertJson();
-    /* @phpstan-ignore-next-line */
+
     expect((string) $response->getBody())->json()->hello->toBe('world');
 });
 
@@ -86,7 +86,7 @@ it('can send a patch request with json data and receive json in response', funct
     $response = patchJson('/json')
         ->assertOk()
         ->assertJson();
-    /* @phpstan-ignore-next-line */
+
     expect((string) $response->getBody())->json()->hello->toBe('world');
 });
 
@@ -94,7 +94,7 @@ it('can send a delete request with json data and receive json in response', func
     $response = deleteJson('/json')
         ->assertOk()
         ->assertJson();
-    /* @phpstan-ignore-next-line */
+
     expect((string) $response->getBody())->json()->hello->toBe('world');
 });
 
@@ -102,7 +102,7 @@ it('can send an options request with json data and receive json in response', fu
     $response = optionsJson('/json')
         ->assertOk()
         ->assertJson();
-    /* @phpstan-ignore-next-line */
+
     expect((string) $response->getBody())->json()->hello->toBe('world');
 });
 

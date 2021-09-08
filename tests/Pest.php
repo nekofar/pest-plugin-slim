@@ -2,6 +2,11 @@
 
 declare(strict_types=1);
 
-use Tests\TestCase;
+uses()
+    ->beforeEach(function (): void {
+        $app = require __DIR__ . '/../resources/bootstrap.php';
 
-uses(TestCase::class)->in(__DIR__);
+        // @phpstan-ignore-next-line
+        $this->setUpApp($app);
+    })
+    ->in(__DIR__);
