@@ -1,7 +1,7 @@
 /art                     export-ignore
 /docs                    export-ignore
 /tests                   export-ignore
-/scripts                 export-ignore
+/resources               export-ignore
 /.github                 export-ignore
 /.php-cs-fixer.dist.php  export-ignore
 .editorconfig            export-ignore
