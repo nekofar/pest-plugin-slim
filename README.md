@@ -24,6 +24,8 @@ Requires Slim Framework 4 and PHP 7.3 or newer.
 ## Usage
 
 ```php
+use function Nekofar\Slim\Pest\get;
+
 beforeEach(function (): void {
     $app = require __DIR__ . '/../config/bootstrap.php';
         
@@ -35,7 +37,6 @@ it('can see home page', function (): void {
         ->assertOk()
         ->assertSee('Welcome');
 });
-
 ```
 
 ## Contributing
