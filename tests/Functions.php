@@ -59,51 +59,39 @@ it('can send an options request and receive text in response', function (): void
 });
 
 it('can send a get request with json data and receive json in response', function (): void {
-    $response = getJson('/json')
+    getJson('/json')
         ->assertOk()
-        ->assertJson();
-
-    expect((string) $response->getBody())->json()->hello->toBe('world');
+        ->assertJson(['hello' => 'world']);
 });
 
 it('can send a post request with json data and receive json in response', function (): void {
-    $response = postJson('/json')
+    postJson('/json')
         ->assertOk()
-        ->assertJson();
-
-    expect((string) $response->getBody())->json()->hello->toBe('world');
+        ->assertJson(['hello' => 'world']);
 });
 
 it('can send a put request with json data and receive json in response', function (): void {
-    $response = putJson('/json')
+    putJson('/json')
         ->assertOk()
-        ->assertJson();
-
-    expect((string) $response->getBody())->json()->hello->toBe('world');
+        ->assertJson(['hello' => 'world']);
 });
 
 it('can send a patch request with json data and receive json in response', function (): void {
-    $response = patchJson('/json')
+    patchJson('/json')
         ->assertOk()
-        ->assertJson();
-
-    expect((string) $response->getBody())->json()->hello->toBe('world');
+        ->assertJson(['hello' => 'world']);
 });
 
 it('can send a delete request with json data and receive json in response', function (): void {
-    $response = deleteJson('/json')
+    deleteJson('/json')
         ->assertOk()
-        ->assertJson();
-
-    expect((string) $response->getBody())->json()->hello->toBe('world');
+        ->assertJson(['hello' => 'world']);
 });
 
 it('can send an options request with json data and receive json in response', function (): void {
-    $response = optionsJson('/json')
+    optionsJson('/json')
         ->assertOk()
-        ->assertJson();
-
-    expect((string) $response->getBody())->json()->hello->toBe('world');
+        ->assertJson(['hello' => 'world']);
 });
 
 it('can send a request and receive not found status in response', function (): void {
