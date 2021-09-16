@@ -19,9 +19,9 @@
         "pestphp/pest-plugin": "^1.0"
     },
     "require-dev": {
+        "nekofar/dev-tools": "^1.0",
         "pestphp/pest-dev-tools": "dev-master",
-        "php-di/slim-bridge": "^3.1",
-        "roave/security-advisories": "dev-latest"
+        "php-di/slim-bridge": "^3.1"
     },
     "config": {
         "preferred-install": "dist",
