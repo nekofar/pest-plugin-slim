@@ -22,117 +22,117 @@ use function Nekofar\Slim\Pest\withHeaders;
 use function Nekofar\Slim\Pest\withToken;
 
 it('can send a get request and receive text in response', function (): void {
-    get('/text')
+    get('/text/plain')
         ->assertOk()
         ->assertSee('hello, world')
         ->assertDontSee('see, not');
 });
 
 it('can send a post request and receive text in response', function (): void {
-    post('/text')
+    post('/text/plain')
         ->assertOk()
         ->assertSee('hello, world');
 });
 
 it('can send a put request and receive text in response', function (): void {
-    put('/text')
+    put('/text/plain')
         ->assertOk()
         ->assertSee('hello, world');
 });
 
 it('can send a patch request and receive text in response', function (): void {
-    patch('/text')
+    patch('/text/plain')
         ->assertOk()
         ->assertSee('hello, world');
 });
 
 it('can send a delete request and receive text in response', function (): void {
-    delete('/text')
+    delete('/text/plain')
         ->assertOk()
         ->assertSee('hello, world');
 });
 
 it('can send an options request and receive text in response', function (): void {
-    options('/text')
+    options('/text/plain')
         ->assertOk()
         ->assertSee('hello, world');
 });
 
 it('can send a get request with json data and receive json in response', function (): void {
-    getJson('/json')
+    getJson('/json/one')
         ->assertOk()
         ->assertJson(['hello' => 'world']);
 });
 
 it('can send a post request with json data and receive json in response', function (): void {
-    postJson('/json')
+    postJson('/json/one')
         ->assertOk()
         ->assertJson(['hello' => 'world']);
 });
 
 it('can send a put request with json data and receive json in response', function (): void {
-    putJson('/json')
+    putJson('/json/one')
         ->assertOk()
         ->assertJson(['hello' => 'world']);
 });
 
 it('can send a patch request with json data and receive json in response', function (): void {
-    patchJson('/json')
+    patchJson('/json/one')
         ->assertOk()
         ->assertJson(['hello' => 'world']);
 });
 
 it('can send a delete request with json data and receive json in response', function (): void {
-    deleteJson('/json')
+    deleteJson('/json/one')
         ->assertOk()
         ->assertJson(['hello' => 'world']);
 });
 
 it('can send an options request with json data and receive json in response', function (): void {
-    optionsJson('/json')
+    optionsJson('/json/one')
         ->assertOk()
         ->assertJson(['hello' => 'world']);
 });
 
 it('can send a request and receive not found status in response', function (): void {
-    post('/')->assertNotFound();
+    post('/status/404')->assertNotFound();
 });
 
 it('can send a request and receive created status in response', function (): void {
-    post('/created')
+    post('/status/201')
         ->assertCreated()
         ->assertNoContent(StatusCodeInterface::STATUS_CREATED);
 });
 
 it('can send a request and receive forbidden status in response', function (): void {
-    post('/forbidden')->assertForbidden();
+    post('/status/403')->assertForbidden();
 });
 
 it('can send a request and receive unauthorized status in response', function (): void {
-    post('/unauthorized')->assertUnauthorized();
+    post('/status/401')->assertUnauthorized();
 });
 
 it('can send a request and receive unprocessable status in response', function (): void {
-    post('/unprocessable')->assertUnprocessable();
+    post('/status/422')->assertUnprocessable();
 });
 
 it('can request with header and get response headers', function (): void {
     withHeader('X-Test', 'Test')
-        ->get('/header')
+        ->get('/head/test')
         ->assertOk()
         ->assertHeader('X-Test', 'Test');
 });
 
 it('can send a request with multiple headers at once', function (): void {
     withHeaders(['X-Test' => 'Test'])
-        ->get('/header')
+        ->get('/head/test')
         ->assertOk()
         ->assertHeader('X-Test', 'Test');
 });
 
 it('can send a request with authorization token in the headers', function (): void {
     withToken(base64_encode('test:123456'), 'Basic')
-        ->get('/token')
+        ->get('/head/auth')
         ->assertOk()
         ->assertHeaderMissing('X-Test')
         ->assertHeader('Authorization', 'Basic ' . base64_encode('test:123456'));

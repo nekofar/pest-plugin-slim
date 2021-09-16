@@ -7,7 +7,7 @@
 [![License][icon-license]][link-license]
 [![Twitter: nekofar][icon-twitter]][link-twitter]
 
-This package is a plugin for [Pest PHP](https://pestphp.com).
+> This package is a plugin for [Pest PHP](https://pestphp.com).
 The Slim Plugin for Pest gives your basic functionality for testing your API's built by Slim.
 
 ## Installation
