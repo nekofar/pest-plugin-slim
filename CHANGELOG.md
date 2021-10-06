@@ -1,6 +1,14 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [1.1.5] - 2021-10-06
+
+### Miscellaneous Tasks
+
+- Update `slim/test` requirements to ^1.1
+- Update `nekofar/dev-tools` requirements to ^1.3
+- Downgrade `nekofar/dev-tools` requirements to ^1.1
+
 ## [1.1.4] - 2021-09-26
 
 ### Documentation
