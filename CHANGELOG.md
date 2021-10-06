@@ -1,31 +1,243 @@
 # Changelog
-## [1.0.0](https://github.com/nekofar/pest-plugin-slim/compare/v1.0.0-alpha.5...v1.0.0) (2021-09-06)
+All notable changes to this project will be documented in this file.
 
-## [1.0.0-alpha.6](https://github.com/nekofar/pest-plugin-slim/compare/v1.0.0-alpha.5...v1.0.0-alpha.6) (2021-09-05)
+## [1.1.5] - 2021-10-06
 
-## [1.0.0-alpha.5](https://github.com/nekofar/pest-plugin-slim/compare/v1.0.0-alpha.4...v1.0.0-alpha.5) (2021-09-02)
+### Miscellaneous Tasks
 
-## [1.0.0-alpha.4](https://github.com/nekofar/pest-plugin-slim/compare/v1.0.0-alpha.3...v1.0.0-alpha.4) (2021-09-02)
+- Update `slim/test` requirements to ^1.1
+- Update `nekofar/dev-tools` requirements to ^1.3
+- Downgrade `nekofar/dev-tools` requirements to ^1.1
 
+## [1.1.4] - 2021-09-26
 
-### Bug Fixes
+### Documentation
 
-* change wrong request method on options method ([a3361de](https://github.com/nekofar/pest-plugin-slim/commit/a3361dec567afb727df52cb8d3edaf6980a84ced))
+- Replace markdawn license file by a text file
 
-## [1.0.0-alpha.3](https://github.com/nekofar/pest-plugin-slim/compare/v1.0.0-alpha.2...v1.0.0-alpha.3) (2021-09-01)
+### Miscellaneous Tasks
 
+- Ignore `git-cliff` configs file from export
 
-### Bug Fixes
+## [1.1.3] - 2021-09-22
 
-* solve missing json method issue by increase pest min version ([458e13b](https://github.com/nekofar/pest-plugin-slim/commit/458e13b64c0f7ae610070862f2216220e35650c7))
+### Documentation
 
-## [1.0.0-alpha.2](https://github.com/nekofar/pest-plugin-slim/compare/v1.0.0-alpha.1...v1.0.0-alpha.2) (2021-09-01)
+- Add downloads badge linked to packagist
+- Add target branch to dependabot configuration file
+- Add commit message scop to dependabot configuration file
+- Improve the dependabot configuration file
 
-## [1.0.0-alpha.1](https://github.com/nekofar/pest-plugin-slim/compare/v1.0.0-alpha.0...v1.0.0-alpha.1) (2021-09-01)
+### Miscellaneous Tasks
 
+- Add `roave/security-advisories` package dev-latest
+- Replace `standard-version` by `git-cliff` for generate changelog
+
+## [1.1.2] - 2021-09-16
+
+### Documentation
+
+- Change format of description
+
+### Miscellaneous Tasks
+
+- Replace required dev packages by `nekofar/dev-tools`
+- Remove useless includes from phpstan config file
+
+### Testing
+
+- Improve bootstrap routes and update tests
+
+## [1.1.1] - 2021-09-14
+
+### Documentation
+
+- Add new template for pull requests
+- Add new dependabot configuration file
+- Add missing function import on sample code
+
+### Miscellaneous Tasks
+
+- Upgrade nekofar/slim-test package to ^1.0.2
+
+### Testing
+
+- Make sure given array is subset of response json
+
+## [1.1.0-beta.0] - 2021-09-08
+
+### Documentation
+
+- Add new section for usage instruction
+
+### Miscellaneous Tasks
+
+- Add php-di/slim-bridge package ^3.1
+
+### Refactor
+
+- Replace test case by bootstrap in resources
+
+### Testing
+
+- Cleanup and improve functions tests
+
+## [1.1.0-alpha.1] - 2021-09-07
+
+### Miscellaneous Tasks
+
+- Remove slim/slim package
+- Remove slim/psr7 package
+- Remove php-di/slim-bridge package
+- Remove selective/test-traits package
+- Change namespaces over composer configs
+- Add nekofar/slim-php package ^1.0@beta
+- Remove useless classes and traits
+
+### Refactor
+
+- Cleanup and improve autoload file
+- Separate testing functionality
+
+### Testing
+
+- Rename tests name space over pest config
+- Change base test case over the tests test case class
+- Rename namespaces over functions
+
+## [1.1.0-alpha.0] - 2021-09-06
 
 ### Features
 
-* add app test trait include setup app method ([36e735b](https://github.com/nekofar/pest-plugin-slim/commit/36e735b082229d86f48021ab3877b9840f7dd450))
-* add functions for http methods ([2d6bd1b](https://github.com/nekofar/pest-plugin-slim/commit/2d6bd1b14804c957cf496a915ec5398a10429642))
-* add http methods test trait ([4d87061](https://github.com/nekofar/pest-plugin-slim/commit/4d8706149e7e21bf7999af2e84739a55158c8d5f))
+- Add new withToken function to add an authorization token for the request
+
+## [1.0.0] - 2021-09-06
+
+### Refactor
+
+- Add new assertions for response headers
+- Add new assertion for checking no content
+- Add new abstract test case and wrap traits
+- Add new http headers test trait and its helper functions
+- Cleanup assert header on test response
+- Solve some issues detected by static analysis
+
+### Testing
+
+- New tests for new assertions in test response
+- Can assert on response no content
+- Replace phpunit test case by plugin test case
+- Can request with header and get response headers
+- Can send a request with multiple headers at once
+- Improve the test description over functions
+
+## [1.0.0-alpha.6] - 2021-09-05
+
+### Refactor
+
+- Add a test response class with mixin of response
+- Add useful assertions to the test response
+- Replace response interface with test response
+
+### Testing
+
+- Change the type of test case to abstract
+- Update tests with new implemented assertions
+
+## [1.0.0-alpha.5] - 2021-09-02
+
+### Documentation
+
+- Add new badge for tests workflow status
+
+### Refactor
+
+- Solve some type issues over test functions
+- Simplify sending requests with headers
+
+## [1.0.0-alpha.4] - 2021-09-02
+
+### Bug Fixes
+
+- Change wrong request method on options method
+
+### Miscellaneous Tasks
+
+- Add roave/security-advisories package
+
+### Refactor
+
+- Cleanup useless skeleton codes and boilderplate files
+- Solve some type issues over test case
+
+### Testing
+
+- Simplify test case by combine everything in setup
+
+## [1.0.0-alpha.3] - 2021-09-01
+
+### Bug Fixes
+
+- Solve missing json method issue by increase pest min version
+
+### Documentation
+
+- Update badges links and icons
+
+## [1.0.0-alpha.2] - 2021-09-01
+
+### Documentation
+
+- Add some basic information
+
+## [1.0.0-alpha.1] - 2021-09-01
+
+### Features
+
+- Add app test trait include setup app method
+- Add http methods test trait
+- Add functions for http methods
+
+### Miscellaneous Tasks
+
+- Add standard version config file to export ignores
+- Add slim/slim package
+- Change minimum php version to 7.4
+- Add slim/psr7 package
+- Add new namespace for test classes
+- Move slim/slim package to dev packages
+- Move slim/psr7 package to dev packages
+- Add php-di/slim-bridge package
+- Ignore composer phar file
+- Change skip status of tags on standard version config
+
+### Refactor
+
+- Cleanup autoload from boilerplate codes
+- Remove useless example boilerplate files
+- Remove return value from set up app on app test trait
+
+### Styling
+
+- Add missing types for autoload functions iterable argument types
+- Add missing declare strict types on http methods test
+
+### Testing
+
+- Add the pest configuration file
+- Add test case and some basic tests
+- Remove boilerplate codes from functions
+
+## [1.0.0-alpha.0] - 2021-09-01
+
+### Miscellaneous Tasks
+
+- Update github sopncor confiquration
+- Update license file header
+- Update composer package name and descriptions
+- Update plugin name all over boilerplate files
+- Normalize composer configuation
+- Add selective/test-traits package
+- Add the config file for standard version
+
+<!-- generated by git-cliff -->
