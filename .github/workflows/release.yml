@@ -37,9 +37,14 @@ jobs:
           r="${r//$'\r'/'%0D'}"   # Multiline escape sequences for '\r'
           echo "::set-output name=RELEASE_BODY::$r"
 
-      # use release body in the same job
-      - name: Release on GitHub
-        uses: softprops/action-gh-release@v1
-        if: startsWith(github.ref, 'refs/tags/')
+  # use release body in another job
+  publish:
+    name: Publish on the GitHub
+    needs: changelog
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create the GitHub release
+        uses: softprops/action-gh-release@v0.1.14
         with:
-          body: ${{ steps.release.outputs.RELEASE_BODY }}
+          body: ${{ needs.changelog.outputs.release_body }}
+          prerelease: ${{ contains(github.ref, '-rc') || contains(github.ref, '-beta') || contains(github.ref, '-alpha') }}
