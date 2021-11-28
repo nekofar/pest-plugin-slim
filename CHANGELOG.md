@@ -1,6 +1,13 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [1.2.0] - 2021-11-28
+
+### Miscellaneous Tasks
+
+- Bump actions/checkout from 2.3.5 to 2.4.0
+- Drop support for php version 7.3
+
 ## [1.1.5] - 2021-10-06
 
 ### Miscellaneous Tasks
