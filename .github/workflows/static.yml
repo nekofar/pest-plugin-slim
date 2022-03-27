@@ -10,10 +10,10 @@ jobs:
 
     steps:
     - name: Checkout
-      uses: actions/checkout@v2.4.0
+      uses: actions/checkout@v3.0.0
 
     - name: Setup PHP
-      uses: shivammathur/setup-php@2.16.0
+      uses: shivammathur/setup-php@2.18.0
       with:
         php-version: 7.4
         tools: composer:v2
@@ -23,7 +23,7 @@ jobs:
       id: composer-cache
       run: |
         echo "::set-output name=dir::$(composer config cache-files-dir)"
-    - uses: actions/cache@v2.1.6
+    - uses: actions/cache@v3.0.0
       with:
         path: ${{ steps.composer-cache.outputs.dir }}
         key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
@@ -46,10 +46,10 @@ jobs:
 
     steps:
     - name: Checkout
-      uses: actions/checkout@v2.4.0
+      uses: actions/checkout@v3.0.0
 
     - name: Setup PHP
-      uses: shivammathur/setup-php@2.16.0
+      uses: shivammathur/setup-php@2.18.0
       with:
         php-version: 7.4
         tools: composer:v2
