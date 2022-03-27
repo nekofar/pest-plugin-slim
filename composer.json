@@ -26,7 +26,14 @@
     },
     "config": {
         "preferred-install": "dist",
-        "sort-packages": true
+        "sort-packages": true,
+        "allow-plugins": {
+            "composer/installers": true,
+            "dealerdirect/phpcodesniffer-composer-installer": true,
+            "infection/extension-installer": true,
+            "pestphp/pest-plugin": true,
+            "phpstan/extension-installer": true
+        }
     },
     "extra": {
         "branch-alias": {
