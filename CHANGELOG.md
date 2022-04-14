@@ -1,11 +1,13 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
-## [unreleased]
+## [2.0.0] - 2022-04-14
 
 ### Miscellaneous Tasks
 
 - Update `config.allow-plugins` on the `composer` configs
+- Remove support for php version `7.*`
+- Update `git-cliff` configurations
 
 ## [1.2.2] - 2022-03-27
 
@@ -98,25 +100,15 @@ All notable changes to this project will be documented in this file.
 
 - Make sure given array is subset of response json
 
-## [1.1.0-beta.0] - 2021-09-08
+## [1.1.0] - 2021-09-08
 
 ### Documentation
 
 - Add new section for usage instruction
 
-### Miscellaneous Tasks
+### Features
 
-- Add php-di/slim-bridge package ^3.1
-
-### Refactor
-
-- Replace test case by bootstrap in resources
-
-### Testing
-
-- Cleanup and improve functions tests
-
-## [1.1.0-alpha.1] - 2021-09-07
+- Add new withToken function to add an authorization token for the request
 
 ### Miscellaneous Tasks
 
@@ -127,104 +119,33 @@ All notable changes to this project will be documented in this file.
 - Change namespaces over composer configs
 - Add nekofar/slim-php package ^1.0@beta
 - Remove useless classes and traits
+- Add php-di/slim-bridge package ^3.1
 
 ### Refactor
 
 - Cleanup and improve autoload file
 - Separate testing functionality
+- Replace test case by bootstrap in resources
 
 ### Testing
 
 - Rename tests name space over pest config
 - Change base test case over the tests test case class
 - Rename namespaces over functions
-
-## [1.1.0-alpha.0] - 2021-09-06
-
-### Features
-
-- Add new withToken function to add an authorization token for the request
+- Cleanup and improve functions tests
 
 ## [1.0.0] - 2021-09-06
-
-### Refactor
-
-- Add new assertions for response headers
-- Add new assertion for checking no content
-- Add new abstract test case and wrap traits
-- Add new http headers test trait and its helper functions
-- Cleanup assert header on test response
-- Solve some issues detected by static analysis
-
-### Testing
-
-- New tests for new assertions in test response
-- Can assert on response no content
-- Replace phpunit test case by plugin test case
-- Can request with header and get response headers
-- Can send a request with multiple headers at once
-- Improve the test description over functions
-
-## [1.0.0-alpha.6] - 2021-09-05
-
-### Refactor
-
-- Add a test response class with mixin of response
-- Add useful assertions to the test response
-- Replace response interface with test response
-
-### Testing
-
-- Change the type of test case to abstract
-- Update tests with new implemented assertions
-
-## [1.0.0-alpha.5] - 2021-09-02
-
-### Documentation
-
-- Add new badge for tests workflow status
-
-### Refactor
-
-- Solve some type issues over test functions
-- Simplify sending requests with headers
-
-## [1.0.0-alpha.4] - 2021-09-02
-
-### Bug Fixes
-
-- Change wrong request method on options method
-
-### Miscellaneous Tasks
-
-- Add roave/security-advisories package
-
-### Refactor
-
-- Cleanup useless skeleton codes and boilderplate files
-- Solve some type issues over test case
-
-### Testing
-
-- Simplify test case by combine everything in setup
-
-## [1.0.0-alpha.3] - 2021-09-01
 
 ### Bug Fixes
 
 - Solve missing json method issue by increase pest min version
-
-### Documentation
-
-- Update badges links and icons
-
-## [1.0.0-alpha.2] - 2021-09-01
+- Change wrong request method on options method
 
 ### Documentation
 
 - Add some basic information
-
-## [1.0.0-alpha.1] - 2021-09-01
+- Update badges links and icons
+- Add new badge for tests workflow status
 
 ### Features
 
@@ -234,6 +155,13 @@ All notable changes to this project will be documented in this file.
 
 ### Miscellaneous Tasks
 
+- Update github sopncor confiquration
+- Update license file header
+- Update composer package name and descriptions
+- Update plugin name all over boilerplate files
+- Normalize composer configuation
+- Add selective/test-traits package
+- Add the config file for standard version
 - Add standard version config file to export ignores
 - Add slim/slim package
 - Change minimum php version to 7.4
@@ -244,12 +172,26 @@ All notable changes to this project will be documented in this file.
 - Add php-di/slim-bridge package
 - Ignore composer phar file
 - Change skip status of tags on standard version config
+- Add roave/security-advisories package
 
 ### Refactor
 
 - Cleanup autoload from boilerplate codes
 - Remove useless example boilerplate files
 - Remove return value from set up app on app test trait
+- Cleanup useless skeleton codes and boilderplate files
+- Solve some type issues over test case
+- Solve some type issues over test functions
+- Simplify sending requests with headers
+- Add a test response class with mixin of response
+- Add useful assertions to the test response
+- Replace response interface with test response
+- Add new assertions for response headers
+- Add new assertion for checking no content
+- Add new abstract test case and wrap traits
+- Add new http headers test trait and its helper functions
+- Cleanup assert header on test response
+- Solve some issues detected by static analysis
 
 ### Styling
 
@@ -261,17 +203,14 @@ All notable changes to this project will be documented in this file.
 - Add the pest configuration file
 - Add test case and some basic tests
 - Remove boilerplate codes from functions
-
-## [1.0.0-alpha.0] - 2021-09-01
-
-### Miscellaneous Tasks
-
-- Update github sopncor confiquration
-- Update license file header
-- Update composer package name and descriptions
-- Update plugin name all over boilerplate files
-- Normalize composer configuation
-- Add selective/test-traits package
-- Add the config file for standard version
+- Simplify test case by combine everything in setup
+- Change the type of test case to abstract
+- Update tests with new implemented assertions
+- New tests for new assertions in test response
+- Can assert on response no content
+- Replace phpunit test case by plugin test case
+- Can request with header and get response headers
+- Can send a request with multiple headers at once
+- Improve the test description over functions
 
 <!-- generated by git-cliff -->
