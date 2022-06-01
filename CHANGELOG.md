@@ -1,6 +1,12 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [2.0.1] - 2022-05-03
+
+### Documentation
+
+- Update php version over readme file
+
 ## [2.0.0] - 2022-04-14
 
 ### Miscellaneous Tasks
