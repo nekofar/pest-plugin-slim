@@ -26,7 +26,7 @@ jobs:
 
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v3.0.0
+      uses: actions/checkout@v3.0.2
 
     - name: Setup PHP environment
       uses: shivammathur/setup-php@2.18.1
@@ -58,7 +58,7 @@ jobs:
       run: ./vendor/bin/pest --colors=always --coverage --coverage-clover coverage.xml
 
     - name: Collect test coverage
-      uses: codecov/codecov-action@v3.0.0
+      uses: codecov/codecov-action@v3.1.0
       with:
         token: ${{ secrets.CODECOV_TOKEN }}
         files: ./coverage.xml
