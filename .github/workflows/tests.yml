@@ -26,10 +26,10 @@ jobs:
 
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v3.0.2
+      uses: actions/checkout@v3.3.0
 
     - name: Setup PHP environment
-      uses: shivammathur/setup-php@2.19.0
+      uses: shivammathur/setup-php@2.23.0
       with:
         php-version: ${{ matrix.php }}
         tools: composer:v2
@@ -39,7 +39,7 @@ jobs:
       id: composer-cache
       run: |
         echo "::set-output name=dir::$(composer config cache-files-dir)"
-    - uses: actions/cache@v3.0.3
+    - uses: actions/cache@v3.2.2
       with:
         path: ${{ steps.composer-cache.outputs.dir }}
         key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
@@ -58,7 +58,7 @@ jobs:
       run: ./vendor/bin/pest --colors=always --coverage --coverage-clover coverage.xml
 
     - name: Collect test coverage
-      uses: codecov/codecov-action@v3.1.0
+      uses: codecov/codecov-action@v3.1.1
       with:
         token: ${{ secrets.CODECOV_TOKEN }}
         files: ./coverage.xml

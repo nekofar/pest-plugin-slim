@@ -1,6 +1,12 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [2.0.3] - 2023-01-06
+
+### Miscellaneous Tasks
+
+- Bump pestphp/pest-dev-tools from dev-master to ^1.0
+
 ## [2.0.1] - 2022-06-01
 
 ### Documentation
