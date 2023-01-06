@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Tests;
 
 use Fig\Http\Message\StatusCodeInterface;
+
 use function Nekofar\Slim\Pest\delete;
 use function Nekofar\Slim\Pest\deleteJson;
 use function Nekofar\Slim\Pest\get;
