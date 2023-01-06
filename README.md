@@ -54,7 +54,7 @@ The MIT License (MIT). Please see [License File](LICENSE) for more information.
 [icon-twitter]: https://img.shields.io/twitter/follow/nekofar.svg?style=flat
 [icon-coverage]: https://codecov.io/gh/nekofar/pest-plugin-slim/graph/badge.svg
 [icon-license]: https://img.shields.io/github/license/nekofar/pest-plugin-slim.svg
-[icon-workflow]: https://img.shields.io/github/workflow/status/nekofar/pest-plugin-slim/Tests
+[icon-workflow]: https://img.shields.io/github/actions/workflow/status/nekofar/pest-plugin-slim/tests.yml
 [icon-downloads]: https://img.shields.io/packagist/dt/nekofar/pest-plugin-slim
 
 [link-packagist]: https://packagist.org/packages/nekofar/pest-plugin-slim
