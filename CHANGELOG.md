@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [3.0.1] - 2023-04-26
+
+### <!-- 07 -->Continuous Integrations
+
+- Remove php version 8.0 from workflows
+
 ## [3.0.0] - 2023-04-26
 
 ### <!-- 07 -->Continuous Integrations
