@@ -2,6 +2,28 @@
 
 All notable changes to this project will be documented in this file.
 
+## [3.0.0] - 2023-04-26
+
+### <!-- 07 -->Continuous Integrations
+
+- Bump codecov/codecov-action from 3.1.1 to 3.1.2 
+- Bump actions/checkout from 3.3.0 to 3.5.2 
+- Bump shivammathur/setup-php from 2.24.0 to 2.25.0 
+- Bump shivammathur/setup-php from 2.25.0 to 2.25.1 
+- Bump codecov/codecov-action from 3.1.2 to 3.1.3 
+- Add php version 8.2 to the `tests` workflow
+
+### <!-- 08 -->Miscellaneous Tasks
+
+- Bump `php` version from `^8.0` to `>=8.1`
+- Bump nekofar/slim-test from ^2.0 to ^3.0
+- Bump pestphp/pest from ^1.0 to ^2.0
+- Bump pestphp/pest-plugin from ^1.0 to ^2.0
+- Bump nekofar/dev-tools from ^2.0 to ^3.0
+- Migrate phpunit configuration file
+- Bump pestphp/pest-dev-tools from ^1.0 to ^2.0
+- Remove `test:types` from composer scripts
+
 ## [2.0.7] - 2023-04-03
 
 ### <!-- 07 -->Continuous Integrations
