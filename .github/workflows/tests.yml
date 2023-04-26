@@ -19,17 +19,17 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest, macos-latest, windows-latest]
-        php: ['8.0', '8.1']
+        php: ['8.0', '8.1', '8.2']
         dependency-version: [prefer-lowest, prefer-stable]
 
     name: PHP ${{ matrix.php }} - ${{ matrix.os }} - ${{ matrix.dependency-version }}
 
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v3.3.0
+      uses: actions/checkout@v3.5.2
 
     - name: Setup PHP environment
-      uses: shivammathur/setup-php@2.24.0
+      uses: shivammathur/setup-php@2.25.1
       with:
         php-version: ${{ matrix.php }}
         tools: composer:v2
@@ -58,7 +58,7 @@ jobs:
       run: ./vendor/bin/pest --colors=always --coverage --coverage-clover coverage.xml
 
     - name: Collect test coverage
-      uses: codecov/codecov-action@v3.1.1
+      uses: codecov/codecov-action@v3.1.3
       with:
         token: ${{ secrets.CODECOV_TOKEN }}
         files: ./coverage.xml
