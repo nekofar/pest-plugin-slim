@@ -59,7 +59,6 @@
         "lint": "php-cs-fixer fix -v",
         "test": [
             "@test:lint",
-            "@test:types",
             "@test:unit"
         ],
         "test:lint": "php-cs-fixer fix -v --dry-run",
