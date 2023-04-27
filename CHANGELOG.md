@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [3.0.2] - 2023-04-27
+
+### <!-- 05 -->Documentation
+
+- Add issue template for bug report and feature request
+
 ## [3.0.1] - 2023-04-26
 
 ### <!-- 07 -->Continuous Integrations
