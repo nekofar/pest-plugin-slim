@@ -20,7 +20,7 @@ composer require nekofar/pest-plugin-slim --dev
 ```
 
 
-Requires Slim Framework 4 and PHP 8.0 or newer.
+Requires Slim Framework 4 and PHP 8.1 or newer.
 
 ## Usage
 
