@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## [3.0.3] - 2023-05-15
+
+### <!-- 07 -->Continuous Integrations
+
+- Change `open-pull-requests-limit` from 10 to 20
+
+### <!-- 08 -->Miscellaneous Tasks
+
+- Bump nekofar/slim-test from ^3.0 to ^3.1
+
 ## [3.0.2] - 2023-04-27
 
 ### <!-- 05 -->Documentation
