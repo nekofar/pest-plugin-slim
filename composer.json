@@ -14,12 +14,12 @@
     "license": "MIT",
     "require": {
         "php": ">=8.1",
-        "nekofar/slim-test": "^3.0",
+        "nekofar/slim-test": "^3.1",
         "pestphp/pest": "^2.0",
         "pestphp/pest-plugin": "^2.0"
     },
     "require-dev": {
-        "nekofar/dev-tools": "^3.0",
+        "nekofar/dev-tools": "^3.1",
         "pestphp/pest-dev-tools": "^2.0",
         "php-di/slim-bridge": "^3.0",
         "roave/security-advisories": "dev-latest"
