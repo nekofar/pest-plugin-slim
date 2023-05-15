@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## [3.0.4] - 2023-05-15
+
+### <!-- 05 -->Documentation
+
+- Change min `php` version from 8.0 to 8.1 on readme
+
+### <!-- 08 -->Miscellaneous Tasks
+
+- Bump nekofar/dev-tools from ^3.0 to ^3.1
+
 ## [3.0.3] - 2023-05-15
 
 ### <!-- 07 -->Continuous Integrations
