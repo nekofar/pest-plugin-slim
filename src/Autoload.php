@@ -14,7 +14,8 @@ Plugin::uses(AppTestTrait::class);
 /**
  * Define additional headers to be sent with the request.
  *
- * @param  array<string, string>  $headers
+ * @param array<string, string> $headers
+ *
  * @return mixed|TestCase
  */
 function withHeaders(array $headers): mixed
@@ -65,7 +66,7 @@ function flushHeaders(): mixed
 /**
  * Visit the given URI with a GET request.
  *
- * @param  array<string, string>  $headers
+ * @param array<string, string> $headers
  */
 function get(string $uri, array $headers = []): TestResponse
 {
@@ -75,7 +76,7 @@ function get(string $uri, array $headers = []): TestResponse
 /**
  * Visit the given URI with a GET request, expecting a JSON response.
  *
- * @param  array<string, string>  $headers
+ * @param array<string, string> $headers
  */
 function getJson(string $uri, array $headers = []): TestResponse
 {
@@ -85,8 +86,8 @@ function getJson(string $uri, array $headers = []): TestResponse
 /**
  * Visit the given URI with a POST request.
  *
- * @param  array<string, mixed>  $data
- * @param  array<string, string>  $headers
+ * @param array<string, mixed>  $data
+ * @param array<string, string> $headers
  */
 function post(string $uri, array $data = [], array $headers = []): TestResponse
 {
@@ -96,8 +97,8 @@ function post(string $uri, array $data = [], array $headers = []): TestResponse
 /**
  * Visit the given URI with a POST request, expecting a JSON response.
  *
- * @param  array<string, mixed>  $data
- * @param  array<string, string>  $headers
+ * @param array<string, mixed>  $data
+ * @param array<string, string> $headers
  */
 function postJson(string $uri, array $data = [], array $headers = []): TestResponse
 {
@@ -107,8 +108,8 @@ function postJson(string $uri, array $data = [], array $headers = []): TestRespo
 /**
  * Visit the given URI with a PUT request.
  *
- * @param  array<string, mixed>  $data
- * @param  array<string, string>  $headers
+ * @param array<string, mixed>  $data
+ * @param array<string, string> $headers
  */
 function put(string $uri, array $data = [], array $headers = []): TestResponse
 {
@@ -118,8 +119,8 @@ function put(string $uri, array $data = [], array $headers = []): TestResponse
 /**
  * Visit the given URI with a PUT request, expecting a JSON response.
  *
- * @param  array<string, mixed>  $data
- * @param  array<string, string>  $headers
+ * @param array<string, mixed>  $data
+ * @param array<string, string> $headers
  */
 function putJson(string $uri, array $data = [], array $headers = []): TestResponse
 {
@@ -129,8 +130,8 @@ function putJson(string $uri, array $data = [], array $headers = []): TestRespon
 /**
  * Visit the given URI with a PATCH request.
  *
- * @param  array<string, mixed>  $data
- * @param  array<string, string>  $headers
+ * @param array<string, mixed>  $data
+ * @param array<string, string> $headers
  */
 function patch(string $uri, array $data = [], array $headers = []): TestResponse
 {
@@ -140,8 +141,8 @@ function patch(string $uri, array $data = [], array $headers = []): TestResponse
 /**
  * Visit the given URI with a PATCH request, expecting a JSON response.
  *
- * @param  array<string, mixed>  $data
- * @param  array<string, string>  $headers
+ * @param array<string, mixed>  $data
+ * @param array<string, string> $headers
  */
 function patchJson(string $uri, array $data = [], array $headers = []): TestResponse
 {
@@ -151,8 +152,8 @@ function patchJson(string $uri, array $data = [], array $headers = []): TestResp
 /**
  * Visit the given URI with a DELETE request.
  *
- * @param  array<string, mixed>  $data
- * @param  array<string, string>  $headers
+ * @param array<string, mixed>  $data
+ * @param array<string, string> $headers
  */
 function delete(string $uri, array $data = [], array $headers = []): TestResponse
 {
@@ -162,8 +163,8 @@ function delete(string $uri, array $data = [], array $headers = []): TestRespons
 /**
  * Visit the given URI with a DELETE request, expecting a JSON response.
  *
- * @param  array<string, mixed>  $data
- * @param  array<string, string>  $headers
+ * @param array<string, mixed>  $data
+ * @param array<string, string> $headers
  */
 function deleteJson(string $uri, array $data = [], array $headers = []): TestResponse
 {
@@ -173,8 +174,8 @@ function deleteJson(string $uri, array $data = [], array $headers = []): TestRes
 /**
  * Visit the given URI with a OPTIONS request.
  *
- * @param  array<string, mixed>  $data
- * @param  array<string, string>  $headers
+ * @param array<string, mixed>  $data
+ * @param array<string, string> $headers
  */
 function options(string $uri, array $data = [], array $headers = []): TestResponse
 {
@@ -184,8 +185,8 @@ function options(string $uri, array $data = [], array $headers = []): TestRespon
 /**
  * Visit the given URI with a OPTIONS request, expecting a JSON response.
  *
- * @param  array<string, mixed>  $data
- * @param  array<string, string>  $headers
+ * @param array<string, mixed>  $data
+ * @param array<string, string> $headers
  */
 function optionsJson(string $uri, array $data = [], array $headers = []): TestResponse
 {
