@@ -55,5 +55,4 @@ $app->get('/head/{type}', function (Request $request, Response $response, string
     return $response;
 });
 
-
 return $app;
