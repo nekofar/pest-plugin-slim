@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Tests;
 
 use Fig\Http\Message\StatusCodeInterface;
-
 use function Nekofar\Slim\Pest\delete;
 use function Nekofar\Slim\Pest\deleteJson;
 use function Nekofar\Slim\Pest\get;
@@ -136,5 +135,5 @@ it('can send a request with authorization token in the headers', function (): vo
         ->get('/head/auth')
         ->assertOk()
         ->assertHeaderMissing('X-Test')
-        ->assertHeader('Authorization', 'Basic ' . base64_encode('test:123456'));
+        ->assertHeader('Authorization', 'Basic '.base64_encode('test:123456'));
 });

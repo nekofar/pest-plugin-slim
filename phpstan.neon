@@ -1,8 +1,11 @@
 parameters:
-    level: 5
+    level: max
     paths:
         - src
 
     checkMissingIterableValueType: true
     checkGenericClassInNonGenericObjectType: false
     reportUnmatchedIgnoredErrors: true
+
+    ignoreErrors:
+        - '#^Call to an undefined method Pest\\PendingCalls\\TestCall\\|Pest\\Support\\HigherOrderTapProxy::#'
