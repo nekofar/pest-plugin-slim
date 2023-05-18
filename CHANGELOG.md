@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## [3.1.0] - 2023-05-18
+
+### <!-- 01 -->Features
+
+- Create `withBasicAuth` to set the request authentication credentials
+
+### <!-- 04 -->Refactor
+
+- Solve some issues regarding code styles
+
 ## [3.0.5] - 2023-05-18
 
 ### <!-- 04 -->Refactor
