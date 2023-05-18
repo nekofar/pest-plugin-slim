@@ -18,7 +18,7 @@ Plugin::uses(AppTestTrait::class);
  *
  * @return mixed|TestCase
  */
-function withHeaders(array $headers)
+function withHeaders(array $headers): mixed
 {
     return test()->withHeaders(...func_get_args());
 }
@@ -28,7 +28,7 @@ function withHeaders(array $headers)
  *
  * @return mixed|TestCase
  */
-function withHeader(string $name, string $value)
+function withHeader(string $name, string $value): mixed
 {
     return test()->withHeader(...func_get_args());
 }
@@ -38,7 +38,7 @@ function withHeader(string $name, string $value)
  *
  * @return mixed|TestCase
  */
-function withToken(string $token, string $type = 'Bearer')
+function withToken(string $token, string $type = 'Bearer'): mixed
 {
     return test()->withToken(...func_get_args());
 }
@@ -48,7 +48,7 @@ function withToken(string $token, string $type = 'Bearer')
  *
  * @return mixed|TestCase
  */
-function flushHeaders()
+function flushHeaders(): mixed
 {
     return test()->flushHeaders(...func_get_args());
 }
@@ -60,7 +60,7 @@ function flushHeaders()
  *
  * @return TestResponse
  */
-function get(string $uri, array $headers = [])
+function get(string $uri, array $headers = []): TestResponse
 {
     return test()->get(...func_get_args());
 }
@@ -72,7 +72,7 @@ function get(string $uri, array $headers = [])
  *
  * @return TestResponse
  */
-function getJson(string $uri, array $headers = [])
+function getJson(string $uri, array $headers = []): TestResponse
 {
     return test()->getJson(...func_get_args());
 }
@@ -85,7 +85,7 @@ function getJson(string $uri, array $headers = [])
  *
  * @return TestResponse
  */
-function post(string $uri, array $data = [], array $headers = [])
+function post(string $uri, array $data = [], array $headers = []): TestResponse
 {
     return test()->post(...func_get_args());
 }
@@ -98,7 +98,7 @@ function post(string $uri, array $data = [], array $headers = [])
  *
  * @return TestResponse
  */
-function postJson(string $uri, array $data = [], array $headers = [])
+function postJson(string $uri, array $data = [], array $headers = []): TestResponse
 {
     return test()->postJson(...func_get_args());
 }
@@ -111,7 +111,7 @@ function postJson(string $uri, array $data = [], array $headers = [])
  *
  * @return TestResponse
  */
-function put(string $uri, array $data = [], array $headers = [])
+function put(string $uri, array $data = [], array $headers = []): TestResponse
 {
     return test()->put(...func_get_args());
 }
@@ -124,7 +124,7 @@ function put(string $uri, array $data = [], array $headers = [])
  *
  * @return TestResponse
  */
-function putJson(string $uri, array $data = [], array $headers = [])
+function putJson(string $uri, array $data = [], array $headers = []): TestResponse
 {
     return test()->putJson(...func_get_args());
 }
@@ -137,7 +137,7 @@ function putJson(string $uri, array $data = [], array $headers = [])
  *
  * @return TestResponse
  */
-function patch(string $uri, array $data = [], array $headers = [])
+function patch(string $uri, array $data = [], array $headers = []): TestResponse
 {
     return test()->patch(...func_get_args());
 }
@@ -150,7 +150,7 @@ function patch(string $uri, array $data = [], array $headers = [])
  *
  * @return TestResponse
  */
-function patchJson(string $uri, array $data = [], array $headers = [])
+function patchJson(string $uri, array $data = [], array $headers = []): TestResponse
 {
     return test()->patchJson(...func_get_args());
 }
@@ -163,7 +163,7 @@ function patchJson(string $uri, array $data = [], array $headers = [])
  *
  * @return TestResponse
  */
-function delete(string $uri, array $data = [], array $headers = [])
+function delete(string $uri, array $data = [], array $headers = []): TestResponse
 {
     return test()->delete(...func_get_args());
 }
@@ -176,7 +176,7 @@ function delete(string $uri, array $data = [], array $headers = [])
  *
  * @return TestResponse
  */
-function deleteJson(string $uri, array $data = [], array $headers = [])
+function deleteJson(string $uri, array $data = [], array $headers = []): TestResponse
 {
     return test()->deleteJson(...func_get_args());
 }
@@ -189,7 +189,7 @@ function deleteJson(string $uri, array $data = [], array $headers = [])
  *
  * @return TestResponse
  */
-function options(string $uri, array $data = [], array $headers = [])
+function options(string $uri, array $data = [], array $headers = []): TestResponse
 {
     return test()->options(...func_get_args());
 }
@@ -202,7 +202,7 @@ function options(string $uri, array $data = [], array $headers = [])
  *
  * @return TestResponse
  */
-function optionsJson(string $uri, array $data = [], array $headers = [])
+function optionsJson(string $uri, array $data = [], array $headers = []): TestResponse
 {
     return test()->optionsJson(...func_get_args());
 }
