@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file.
 
+## [3.0.5] - 2023-05-18
+
+### <!-- 04 -->Refactor
+
+- Add all functions missing return types
+- Remove redundant return types and extra whitespaces
+
+### <!-- 07 -->Continuous Integrations
+
+- Bump orhun/git-cliff-action from 2.0.5 to 2.0.6 
+
+### <!-- 08 -->Miscellaneous Tasks
+
+- Bump nekofar/slim-test from ^3.1 to ^3.2
+- Change `phpstan` level to the max
+- Ignore call undefined methods error of `phpstand`
+
 ## [3.0.4] - 2023-05-15
 
 ### <!-- 05 -->Documentation
