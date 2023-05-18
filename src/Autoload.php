@@ -43,6 +43,16 @@ function withToken(string $token, string $type = 'Bearer'): mixed
 }
 
 /**
+ * Set the request authentication credentials using Basic Authentication.
+ *
+ * @return mixed|TestCase
+ */
+function withBasicAuth(string $username, string $password): mixed
+{
+    return test()->withBasicAuth(...func_get_args());
+}
+
+/**
  * Flush all the configured headers.
  *
  * @return mixed|TestCase
