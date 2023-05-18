@@ -14,7 +14,7 @@
     "license": "MIT",
     "require": {
         "php": ">=8.1",
-        "nekofar/slim-test": "^3.1",
+        "nekofar/slim-test": "^3.2",
         "pestphp/pest": "^2.0",
         "pestphp/pest-plugin": "^2.0"
     },
