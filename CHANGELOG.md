@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [3.1.1] - 2023-05-27
+
+### <!-- 07 -->Continuous Integrations
+
+- Bump codecov/codecov-action from 3.1.3 to 3.1.4 
+- Bump shivammathur/setup-php from 2.25.1 to 2.25.2 
+
 ## [3.1.0] - 2023-05-18
 
 ### <!-- 01 -->Features
