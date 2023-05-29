@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [3.1.2] - 2023-05-29
+
+### <!-- 02 -->Bug Fixes
+
+- Update some of helper functions return types
+
 ## [3.1.1] - 2023-05-27
 
 ### <!-- 07 -->Continuous Integrations
