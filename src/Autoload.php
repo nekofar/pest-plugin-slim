@@ -4,12 +4,11 @@ declare(strict_types=1);
 
 namespace Nekofar\Slim\Pest;
 
+use Nekofar\Slim\Test\TestCase;
 use Nekofar\Slim\Test\TestResponse;
-use Nekofar\Slim\Test\Traits\AppTestTrait;
 use Pest\Plugin;
-use PHPUnit\Framework\TestCase;
 
-Plugin::uses(AppTestTrait::class);
+Plugin::uses(TestCase::class);
 
 /**
  * Define additional headers to be sent with the request.
