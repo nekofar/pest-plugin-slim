@@ -15,50 +15,40 @@ Plugin::uses(AppTestTrait::class);
  * Define additional headers to be sent with the request.
  *
  * @param array<string, string> $headers
- *
- * @return mixed|TestCase
  */
-function withHeaders(array $headers): mixed
+function withHeaders(array $headers): TestCase
 {
     return test()->withHeaders(...func_get_args());
 }
 
 /**
  * Add a header to be sent with the request.
- *
- * @return mixed|TestCase
  */
-function withHeader(string $name, string $value): mixed
+function withHeader(string $name, string $value): TestCase
 {
     return test()->withHeader(...func_get_args());
 }
 
 /**
  * Add an authorization token for the request.
- *
- * @return mixed|TestCase
  */
-function withToken(string $token, string $type = 'Bearer'): mixed
+function withToken(string $token, string $type = 'Bearer'): TestCase
 {
     return test()->withToken(...func_get_args());
 }
 
 /**
  * Set the request authentication credentials using Basic Authentication.
- *
- * @return mixed|TestCase
  */
-function withBasicAuth(string $username, string $password): mixed
+function withBasicAuth(string $username, string $password): TestCase
 {
     return test()->withBasicAuth(...func_get_args());
 }
 
 /**
  * Flush all the configured headers.
- *
- * @return mixed|TestCase
  */
-function flushHeaders(): mixed
+function flushHeaders(): TestCase
 {
     return test()->flushHeaders(...func_get_args());
 }
