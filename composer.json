@@ -18,6 +18,9 @@
         "pestphp/pest": "^2.0",
         "pestphp/pest-plugin": "^2.0"
     },
+    "conflict": {
+        "nekofar/slim-test": "<=3.2.0"
+    },
     "require-dev": {
         "nekofar/dev-tools": "^3.1",
         "pestphp/pest-dev-tools": "^2.0",

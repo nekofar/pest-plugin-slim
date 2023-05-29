@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [3.1.4] - 2023-05-29
+
+### <!-- 02 -->Bug Fixes
+
+- Solve conflict with `slim-test` version `<=3.2.0`
+
 ## [3.1.3] - 2023-05-29
 
 ### <!-- 04 -->Refactor
