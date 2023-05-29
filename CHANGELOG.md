@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [3.1.3] - 2023-05-29
+
+### <!-- 04 -->Refactor
+
+- Replace test traits by test case
+
 ## [3.1.2] - 2023-05-29
 
 ### <!-- 02 -->Bug Fixes
