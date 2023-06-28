@@ -1,71 +1,77 @@
 {
-    "name": "nekofar/pest-plugin-slim",
-    "description": "The Pest Slim Plugin",
-    "keywords": [
-        "php",
-        "framework",
-        "pest",
-        "unit",
-        "test",
-        "testing",
-        "plugin",
-        "slim"
-    ],
-    "license": "MIT",
-    "require": {
-        "php": ">=8.1",
-        "nekofar/slim-test": "^3.2",
-        "pestphp/pest": "^2.0",
-        "pestphp/pest-plugin": "^2.0"
-    },
-    "conflict": {
-        "nekofar/slim-test": "<=3.2.0"
-    },
-    "require-dev": {
-        "nekofar/dev-tools": "^3.1",
-        "pestphp/pest-dev-tools": "^2.0",
-        "php-di/slim-bridge": "^3.0",
-        "roave/security-advisories": "dev-latest"
-    },
-    "config": {
-        "preferred-install": "dist",
-        "sort-packages": true,
-        "allow-plugins": {
-            "composer/installers": true,
-            "dealerdirect/phpcodesniffer-composer-installer": true,
-            "infection/extension-installer": true,
-            "pestphp/pest-plugin": true,
-            "phpstan/extension-installer": true
-        }
-    },
-    "extra": {
-        "branch-alias": {
-            "dev-master": "1.x-dev"
-        }
-    },
-    "autoload": {
-        "psr-4": {
-            "Nekofar\\Slim\\Pest\\": "src/"
-        },
-        "files": [
-            "src/Autoload.php"
-        ]
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "Tests\\": "tests/"
-        }
-    },
-    "minimum-stability": "dev",
-    "prefer-stable": true,
-    "scripts": {
-        "lint": "php-cs-fixer fix -v",
-        "test": [
-            "@test:lint",
-            "@test:unit"
-        ],
-        "test:lint": "php-cs-fixer fix -v --dry-run",
-        "test:types": "phpstan analyse --ansi",
-        "test:unit": "pest --colors=always"
+  "name": "nekofar/pest-plugin-slim",
+  "description": "The Pest Slim Plugin",
+  "keywords": [
+    "php",
+    "framework",
+    "pest",
+    "unit",
+    "test",
+    "testing",
+    "plugin",
+    "slim"
+  ],
+  "license": "MIT",
+  "require": {
+    "php": ">=8.1",
+    "nekofar/slim-test": "^3.2",
+    "pestphp/pest": "^2.0",
+    "pestphp/pest-plugin": "^2.0"
+  },
+  "conflict": {
+    "nekofar/slim-test": "<=3.2.0"
+  },
+  "require-dev": {
+    "nekofar/dev-tools": "^3.1",
+    "pestphp/pest-dev-tools": "^2.0",
+    "php-di/slim-bridge": "^3.0",
+    "roave/security-advisories": "dev-latest"
+  },
+  "config": {
+    "preferred-install": "dist",
+    "sort-packages": true,
+    "allow-plugins": {
+      "composer/installers": true,
+      "dealerdirect/phpcodesniffer-composer-installer": true,
+      "infection/extension-installer": true,
+      "pestphp/pest-plugin": true,
+      "phpstan/extension-installer": true
     }
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "1.x-dev"
+    }
+  },
+  "autoload": {
+    "psr-4": {
+      "Nekofar\\Slim\\Pest\\": "src/"
+    },
+    "files": [
+      "src/Autoload.php"
+    ]
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Tests\\": "tests/"
+    }
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "scripts": {
+    "lint": "php-cs-fixer fix -v",
+    "test": [
+      "@test:lint",
+      "@test:unit"
+    ],
+    "test:lint": "php-cs-fixer fix -v --dry-run",
+    "test:types": "phpstan analyse --ansi",
+    "test:unit": "pest --colors=always"
+  },
+  "funding": [
+    {
+      "type": "custom",
+      "url": "https://ud.me/nekofar.crypto"
+    }
+  ]
 }
