@@ -7,6 +7,7 @@
 [![Coverage Status][icon-coverage]][link-coverage]
 [![License][icon-license]][link-license]
 [![Twitter: nekofar][icon-twitter]][link-twitter]
+[![Donate](https://img.shields.io/badge/donate-nekofar.crypto-a2b9bc?logo=ko-fi&logoColor=white)](https://ud.me/nekofar.crypto)
 
 > This package is a plugin for [Pest PHP](https://pestphp.com).
 The Slim Plugin for Pest gives your basic functionality for testing your API's built by Slim.
