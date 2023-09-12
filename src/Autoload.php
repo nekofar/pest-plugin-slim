@@ -53,6 +53,16 @@ function flushHeaders(): TestCase
 }
 
 /**
+ * Visit the given URI with a HEAD request.
+ *
+ * @param array<string, string> $headers
+ */
+function head(string $uri, array $headers = []): TestResponse
+{
+    return test()->head(...func_get_args());
+}
+
+/**
  * Visit the given URI with a GET request.
  *
  * @param array<string, string> $headers

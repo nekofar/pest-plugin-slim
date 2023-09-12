@@ -10,6 +10,7 @@ use function Nekofar\Slim\Pest\delete;
 use function Nekofar\Slim\Pest\deleteJson;
 use function Nekofar\Slim\Pest\get;
 use function Nekofar\Slim\Pest\getJson;
+use function Nekofar\Slim\Pest\head;
 use function Nekofar\Slim\Pest\options;
 use function Nekofar\Slim\Pest\optionsJson;
 use function Nekofar\Slim\Pest\patch;
@@ -22,6 +23,14 @@ use function Nekofar\Slim\Pest\withBasicAuth;
 use function Nekofar\Slim\Pest\withHeader;
 use function Nekofar\Slim\Pest\withHeaders;
 use function Nekofar\Slim\Pest\withToken;
+
+it('can send a head request that exists', function (): void {
+    head('/head/true')->assertOk();
+});
+
+it('can send a head request does not exists', function (): void {
+    head('/head/false')->assertNotFound();
+});
 
 it('can send a get request and receive text in response', function (): void {
     get('/text/plain')
