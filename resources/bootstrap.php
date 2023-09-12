@@ -6,6 +6,7 @@ use DI\Bridge\Slim\Bridge;
 use DI\Container;
 use Psr\Http\Message\MessageInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
+use Fig\Http\Message\StatusCodeInterface;
 
 // Create Container using PHP-DI
 $container = new Container();
@@ -18,6 +19,11 @@ $app->addRoutingMiddleware();
 
 // Add Error Middleware
 $app->addErrorMiddleware(false, false, false);
+
+$app->map(['HEAD'], '/head/{exists}', function (Response $response, string $exists): Response {
+    $code = 'true' === $exists ? StatusCodeInterface::STATUS_OK : StatusCodeInterface::STATUS_NOT_FOUND;
+    return $response->withStatus($code);
+});
 
 $app->any('/status/{code}', function (Response $response, int $code): Response {
     return $response->withStatus($code);
