@@ -84,6 +84,21 @@ function post(string $uri, array $data = [], array $headers = []): TestResponse
 }
 
 /**
+ * POST request with file upload.
+ *
+ * @param string $uri
+ * @param string $file
+ * @param string $mime
+ * @param string $name
+ * @param array<string, mixed>  $data
+ * @param array<string, string> $headers
+ */
+function postUpload(string $uri, string $file, string $mime, string $name = 'file', array $data = [], array $headers = []): TestResponse
+{
+    return test()->postUpload(...func_get_args());
+}
+
+/**
  * Visit the given URI with a POST request, expecting a JSON response.
  *
  * @param array<string, mixed>  $data
