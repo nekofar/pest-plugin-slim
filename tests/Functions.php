@@ -48,6 +48,12 @@ it('can send a patch request and receive text in response', function (): void {
         ->assertSee('hello, world');
 });
 
+it('can send a upload request and receive text in response', function (): void {
+    patch('/upload')
+        ->assertOk()
+        ->assertSee('file uploaded');
+});
+
 it('can send a delete request and receive text in response', function (): void {
     delete('/text/plain')
         ->assertOk()

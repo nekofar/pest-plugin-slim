@@ -23,6 +23,11 @@ $app->any('/status/{code}', function (Response $response, int $code): Response {
     return $response->withStatus($code);
 });
 
+$app->any('/upload', function (Response $response): Response {
+    $response->getBody()->write('file uploaded');
+    return $response;
+});
+
 $app->any('/text/{type}', function (Response $response, string $type): Response {
     if ('plain' === $type) {
         $response->getBody()->write('hello, world');
