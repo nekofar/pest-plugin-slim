@@ -58,7 +58,7 @@ jobs:
       run: ./vendor/bin/pest --colors=always --coverage --coverage-clover coverage.xml
 
     - name: Collect test coverage
-      uses: codecov/codecov-action@v4.1.1
+      uses: codecov/codecov-action@v4.2.0
       with:
         token: ${{ secrets.CODECOV_TOKEN }}
         files: ./coverage.xml
